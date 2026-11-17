@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+<title id="title">Percurso de referência até a massoterapia em Londrina</title>
+<desc id="desc">Esquema sem escala. Da entrada à direita, o percurso contorna a sala de reunião pelo corredor superior, desce ao corredor entre as estações de trabalho e o RH e segue até a massoterapia à esquerda. Banheiro com acesso somente pela massoterapia.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#592080" stroke-width="1.5"/></marker></defs>
+<rect width="900" height="600" rx="24" fill="#faf7fc"/>
+<g fill="#eeeaf1" stroke="#c8c1ce" stroke-width="2"><rect x="260" y="50" width="165" height="90" rx="8"/><rect x="260" y="180" width="165" height="165" rx="8"/><rect x="520" y="210" width="160" height="165" rx="8"/></g>
+<rect x="65" y="185" width="120" height="90" rx="10" fill="#e5f3e9" stroke="#2d7444" stroke-width="3"/>
+<rect x="65" y="280" width="120" height="65" rx="8" fill="#f7e6f0" stroke="#a13f77" stroke-width="2"/>
+<rect x="65" y="455" width="120" height="85" rx="10" fill="#ece2f5" stroke="#74429e" stroke-width="2"/>
+<rect x="520" y="450" width="160" height="90" rx="10" fill="#fff0de" stroke="#bb6a1c" stroke-width="2"/>
+<rect x="750" y="315" width="100" height="150" rx="10" fill="#e6f3fa" stroke="#277896" stroke-width="2"/>
+<path d="M750 390H725L705 155H475V405H215V235H185" fill="none" stroke="#e8daf1" stroke-width="28" stroke-linejoin="round"/>
+<path d="M750 390H725L705 155H475V405H215V235H185" fill="none" stroke="#592080" stroke-width="6" stroke-linejoin="round"/>
+<path d="M648 155H585M475 265V320M365 405H305M215 330V280" fill="none" stroke="#592080" stroke-width="3" marker-end="url(#arrow)"/>
+<g font-family="Arial,sans-serif" font-size="19" fill="#29133d" text-anchor="middle">
+<text x="125" y="225" font-weight="700">Massoterapia</text><text x="125" y="249" font-size="15">Destino</text>
+<text x="125" y="307">Banheiro</text><text x="125" y="329" font-size="12">acesso interno</text>
+<text x="125" y="490">Espaço</text><text x="125" y="513">Saúde</text><text x="600" y="503">RH</text>
+<text x="600" y="280">Sala de</text><text x="600" y="305">reunião</text>
+<text x="800" y="355" font-weight="700">Entrada</text><text x="800" y="383">Recepção</text>
+<text x="342" y="95" font-size="15">Estações de trabalho</text><text x="342" y="265" font-size="15">Estações de trabalho</text>
+</g><text x="35" y="575" font-family="Arial,sans-serif" font-size="15" fill="#53465d">Esquema de orientação sem escala. Não representa localização em tempo real nem piso já instalado.</text>
+</svg>

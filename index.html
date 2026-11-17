@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Protótipo da evolução do Espaço Saúde, com teleatendimento, conteúdos, campanhas e massoterapia acessível.">
+  <meta name="selena-build" content="2026.11.11-r10">
+  <title>Espaço Saúde</title>
+  <link rel="icon" type="image/png" href="assets/selena-simbolo-e.png">
+  <link rel="stylesheet" href="style.css?v=2026.11.11-r10">
+  <link rel="stylesheet" href="journey.css?v=2026.11.11-r10">
+  <link rel="stylesheet" href="wayfinding.css?v=2026.11.11-r10">
+  <script src="config.js?v=2026.11.11-r10" defer></script>
+  <script src="demo-agenda.js?v=2026.11.11-r10" defer></script>
+  <script src="script.js?v=2026.11.11-r10" defer></script>
+  <script src="features.js?v=2026.11.11-r10" defer></script>
+  <script src="booking.js?v=2026.11.11-r10" defer></script>
+  <script src="wayfinding-data.js?v=2026.11.11-r10" defer></script>
+  <script src="wayfinding.js?v=2026.11.11-r10" defer></script>
+  <script src="journey.js?v=2026.11.11-r10" defer></script>
+  <script src="october-data.js?v=2026.11.11-r10" defer></script>
+  <script src="october-updates.js?v=2026.11.11-r10" defer></script>
+  <script src="motion.js?v=2026.11.11-r10" defer></script>
+  <script src="community-demo.js?v=2026.11.11-r10" defer></script>
+  <script src="site-help.js?v=2026.11.11-r10" defer></script>
+  <script src="i18n.js?v=2026.11.11-r10" defer></script>
+</head>
+<body data-selena-build="2026.11.11-r10">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="public-header" id="public-header">
+    <div class="public-header-inner">
+      <a class="public-brand" href="#/mural" aria-label="Espaço Saúde — Mural">
+        <img src="assets/selena-logo-oficial.png" alt="organização parceira">
+        <span>Espaço Saúde</span>
+      </a>
+
+      <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="public-navigation">
+        <span aria-hidden="true">☰</span><span class="sr-only">Abrir menu</span>
+      </button>
+
+      <nav class="public-navigation" id="public-navigation" aria-label="Navegação principal">
+        <a href="#/mural" data-nav="mural">Mural</a>
+        <a href="#/atendimento" data-nav="atendimento">Atendimento</a>
+        <a href="#/campanhas" data-nav="campanhas">Campanhas</a>
+        <a href="#/massoterapia" data-nav="massoterapia">Massoterapia</a>
+        <div class="mobile-access-row" aria-label="Opções de acessibilidade">
+          <button class="access-button" type="button" data-access="font" aria-pressed="false">Aumentar texto</button>
+          <button class="access-button" type="button" data-access="contrast" aria-pressed="false">Alto contraste</button>
+        </div>
+        <div class="mobile-utility-row">
+          <span class="mobile-language-label">Idioma:</span>
+          <button type="button" data-language="pt-BR" aria-current="true">PT</button>
+          <button type="button" data-language="en">EN</button>
+          <button type="button" data-language="es">ES</button>
+          <button type="button" data-site-help-open>Ajuda</button>
+          <a href="#/sobre">Sobre</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="access-button text-size-toggle" type="button" data-access="font" aria-pressed="false" title="Tamanho do texto: Normal (100%). Clique para alternar entre 125%, 150% e 200%"><span class="font-btn-label">A+</span> <small class="font-level-badge">100%</small></button>
+        <button class="access-button contrast-toggle-btn" type="button" data-access="contrast" aria-pressed="false" title="Ativar modo alto contraste preto e branco">◐</button>
+        <div class="language-control">
+          <button class="header-text-action" type="button" data-language-toggle aria-expanded="false">Idioma</button>
+          <div class="language-menu" id="language-menu" hidden><button type="button" data-language="pt-BR" aria-current="true">Português</button><button type="button" data-language="en">English</button><button type="button" data-language="es">Español</button></div>
+          <span id="translation-status" class="sr-only" aria-live="polite"></span>
+        </div>
+        <button class="header-text-action" type="button" data-site-help-open>Ajuda</button>
+        <a class="header-text-action" href="#/sobre">Sobre</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="prototype-bar" id="prototype-bar">
+    <span><strong>Protótipo do Grupo 3</strong> · conteúdos, contas e horários demonstrativos</span>
+    <span>Programa de Estágio 2026 · <small class="build-stamp">Revisão final 11/11 · R10</small></span>
+  </div>
+
+  <main id="conteudo">
+    <section class="page" id="page-mural" data-page="mural">
+      <div class="portal-container mural-page">
+        <section class="mural-overview" aria-label="Mural e acessos de saúde">
+          <section class="community-column" aria-labelledby="community-title">
+            <div class="column-heading"><p class="section-kicker light">Mural do Bem-estar</p><h1 id="community-title">Conteúdos da comunidade</h1></div>
+            <article class="community-feature">
+              <img class="community-feature-image" src="assets/mural-comunidade.png" alt="Imagem ilustrativa de profissionais reunidos em um momento de bem-estar no trabalho">
+              <div class="community-date" aria-label="Data de hoje"><strong id="mural-current-day">--</strong><span id="mural-current-month">---</span></div>
+              <div><span class="content-category">Qualidade de vida</span><h2>Como você quer se sentir nos próximos dias?</h2><p>Descanso, movimento e pequenos momentos de cuidado também podem transformar o restante do dia.</p><div class="content-byline"><span class="mini-avatar image-avatar"><img src="assets/avatar-gizele-v1.png" alt="Avatar ilustrativo de Equipe do Espaço Saúde"></span><span><strong>Equipe do Espaço Saúde</strong><small>Dica do dia · Espaço Saúde</small></span></div><a href="#/artigo">Continuar lendo</a></div>
+            </article>
+            <div class="community-small-grid">
+              <article><img class="community-card-photo" src="assets/mural-pequenas-conquistas.png" alt="Imagem ilustrativa de colegas em uma conversa respeitosa"><span class="content-category">Ética e acolhimento · 21/10/2026</span><h3>Global Ethics Day: respeito, inclusão e integridade</h3><p class="mural-update-lead">Conheça o Código de Ética, a Política de Gestão de Conflito de Interesses e o Canal de Alerta.</p><a href="#/campanha?slug=etica-outubro-2026">Ler comunicado</a></article>
+              <article><img class="community-card-photo" src="assets/mural-gratidao.png" alt="Imagem ilustrativa de autocuidado e reflexão"><span class="content-category">Outubro Rosa · 20/10/2026</span><h3>Corpo, mente e emoções: o que a mulher moderna precisa ouvir?</h3><p class="mural-update-lead">Encontro demonstrativo sobre saúde integral e bem-estar.</p><a href="#/campanha?slug=talk-show-outubro-2026">Ler comunicado</a></article>
+            </div>
+          </section>
+
+          <section class="care-column" aria-labelledby="mural-title">
+            <aside class="daily-quote" aria-labelledby="daily-quote-title"><span id="daily-quote-title">Frase do dia</span><blockquote id="daily-quote-text">Cuidar de si também é uma forma de seguir em frente com mais presença.</blockquote><small>Espaço Saúde</small></aside>
+            <div class="care-intro"><p class="section-kicker light">Espaço Saúde</p><h1 id="mural-title">Cuidado que acolhe, orienta e está ao seu lado.</h1><p>Um ponto central para colaboradores e dependentes encontrarem orientação em saúde, conteúdos, campanhas e benefícios, de casa ou do escritório.</p></div>
+            <div class="benefit-links" aria-label="Benefícios em destaque">
+              <a href="#/atendimento"><span class="benefit-link-icon"><img src="assets/icon-beneficios.svg" alt=""></span><span><strong>Atendimento e benefícios</strong><small>Vidalink, planos de saúde, Wellhub e orientação.</small></span><b aria-hidden="true">→</b></a>
+              <a href="#/massoterapia"><span class="benefit-link-icon"><img src="assets/icon-massoterapia.svg" alt=""></span><span><strong>Massoterapia</strong><small>Profissionais, horários e jornada acessível.</small></span><b aria-hidden="true">→</b></a>
+              <a href="#/acessibilidade"><span class="benefit-link-icon"><img src="assets/icon-inclusao.svg" alt=""></span><span><strong>Acessibilidade</strong><small>Recursos digitais e orientações presenciais.</small></span><b aria-hidden="true">→</b></a>
+            </div>
+            <div class="compact-pillars"><p>Nossos pilares</p><ul><li>Acolhimento</li><li>Cuidado e acompanhamento</li><li>Retorno ao trabalho</li><li>Orientação em saúde</li><li>Integração e cuidado</li></ul></div>
+            <div class="care-actions"><button class="button button-accent orientation-button" type="button" data-help-open>Preciso de orientação</button><a class="text-link light-link" href="#/sobre">Conheça nossa cultura de cuidado →</a></div>
+          </section>
+        </section>
+
+        <section class="community-hub" aria-labelledby="community-hub-title">
+          <div class="community-hub-heading">
+            <div><p class="section-kicker">Comunidade</p><h2 id="community-hub-title">Compartilhe, comente e inspire</h2><p>Conteúdos históricos e novas publicações da comunidade.</p></div>
+            <span class="community-guideline">Respeito · privacidade · participação voluntária</span>
+          </div>
+          <div class="community-layout">
+            <form class="community-composer" id="community-form">
+              <label for="community-text"><strong>Participe da conversa</strong></label>
+              <div class="community-editor">
+                <textarea id="community-text" maxlength="500" placeholder="O que você gostaria de compartilhar?"></textarea>
+                <div class="community-editor-tools" aria-label="Ferramentas da publicação">
+                  <button class="community-tool" id="community-format-toggle" type="button" aria-label="Formatar texto" aria-expanded="false" aria-controls="community-format-panel" title="Formatar texto">A✎</button>
+                  <div class="community-popover community-format-panel" id="community-format-panel" hidden>
+                    <button type="button" data-community-format="bold" aria-label="Negrito" title="Negrito"><strong>B</strong></button>
+                    <button type="button" data-community-format="italic" aria-label="Itálico" title="Itálico"><em>I</em></button>
+                    <button type="button" data-community-format="list" aria-label="Adicionar marcador" title="Lista com marcador">☷</button>
+                  </div>
+                  <button class="community-tool" id="community-emoji-toggle" type="button" aria-label="Inserir emoji" aria-expanded="false" aria-controls="community-emoji-panel" title="Inserir emoji">☺</button>
+                  <div class="community-popover community-emoji-panel" id="community-emoji-panel" hidden>
+                    <button type="button" data-community-emoji="💜" aria-label="Coração roxo">💜</button>
+                    <button type="button" data-community-emoji="😊" aria-label="Sorriso">😊</button>
+                    <button type="button" data-community-emoji="🙌" aria-label="Comemoração">🙌</button>
+                    <button type="button" data-community-emoji="🌻" aria-label="Girassol">🌻</button>
+                    <button type="button" data-community-emoji="👏" aria-label="Palmas">👏</button>
+                  </div>
+                  <label class="community-tool community-attachment" title="Anexar imagem"><span aria-hidden="true">📎</span><span class="sr-only">Anexar imagem</span><input id="community-image" type="file" accept="image/png,image/jpeg,image/webp"></label>
+                  <button class="community-tool" id="community-insert-link" type="button" aria-label="Inserir link" title="Inserir link">＋</button>
+                </div>
+              </div>
+              <div class="community-image-preview" id="community-image-preview" hidden>
+                <img id="community-preview-image" alt="Prévia da imagem selecionada">
+                <label for="community-image-alt">Descrição da imagem para acessibilidade</label>
+                <input id="community-image-alt" type="text" maxlength="140" placeholder="Descreva a imagem">
+                <button type="button" id="community-image-remove">Remover imagem</button>
+              </div>
+              <div class="composer-actions"><button class="button button-primary" type="submit">Publicar</button></div>
+              <small id="community-demo-status" role="status">Demonstração: publicações e comentários ficam apenas neste navegador. Integração com o Google Chat prevista para depois.</small>
+            </form>
+            <div class="community-feed" id="community-feed" aria-live="polite">
+              <article class="social-post privacy-community-post">
+                <header><span class="social-avatar image-avatar"><img src="assets/icon-etica.svg" alt=""></span><div><strong>Aviso de Proteção de Dados</strong><small>19/10/2026 · comunicado atualizado</small></div></header>
+                <p>Consulte o comunicado sobre tratamento de dados, direitos e canais de contato.</p>
+                <a class="button button-outline" href="#/campanha?slug=protecao-dados-outubro-2026">Ler comunicado</a>
+              </article>
+              <article class="social-post" data-community-post-id="historico-25-09">
+                <header><span class="social-avatar image-avatar"><img src="assets/avatar-gizele-v1.png" alt="Avatar ilustrativo de Equipe do Espaço Saúde"></span><div><strong>Equipe do Espaço Saúde</strong><small>25/09/2026 · 9h38 · Mural do Bem-estar</small></div></header>
+                <p><strong>Já pensando no fim de semana?</strong> O que você pretende fazer para recarregar as energias? Um momento de descanso, uma caminhada, música ou simplesmente não fazer nada já pode fazer diferença.</p>
+                <div class="post-comment-preview"><strong>Colaborador Demo</strong><p>Descansar e buscar a Deus. Aproveito e desejo um bom fim de semana a todos!</p></div>
+                <div class="post-comment-preview"><strong>Colaborador Demo</strong><p>Dormir até tarde, visitar meus sogros e fazer calistenia sem preocupação com horários.</p></div>
+                <div class="social-actions"><button type="button" data-historical-like disabled title="Registro histórico"><span>♡</span> Curtir <b>6</b></button><button type="button" data-comment-toggle>Comentar <b>4</b></button></div>
+                
+              </article>
+              <article class="social-post" data-community-post-id="historico-24-09">
+                <header><span class="social-avatar image-avatar"><img src="assets/avatar-gizele-v1.png" alt="Avatar ilustrativo de Equipe do Espaço Saúde"></span><div><strong>Equipe do Espaço Saúde</strong><small>24/09/2026 · 10h57 · Saúde mental</small></div></header>
+                <p><strong>O que ajuda você a manter o equilíbrio emocional?</strong> Pode ser uma pausa, atividade física, música, silêncio, conversar com alguém ou simplesmente respirar e desacelerar.</p>
+                <div class="post-comment-preview"><strong>Renan Miranda da Silva</strong><p>A prática da minha religião e tocar instrumentos: violão, guitarra e baixo.</p></div>
+                <div class="post-comment-preview"><strong>Sara Mota</strong><p>Meu motivo de equilíbrio diário tem quatro patas e um narizinho gelado.</p></div>
+                <div class="social-actions"><button type="button" data-historical-like disabled title="Registro histórico"><span>♡</span> Curtir <b>5</b></button><button type="button" data-comment-toggle>Comentar <b>4</b></button></div>
+                
+              </article>
+              <article class="social-post" data-community-post-id="historico-23-09">
+                <header><span class="social-avatar image-avatar"><img src="assets/avatar-gizele-v1.png" alt="Avatar ilustrativo de Equipe do Espaço Saúde"></span><div><strong>Equipe do Espaço Saúde</strong><small>23/09/2026 · 11h01 · Gratidão</small></div></header>
+                <p><strong>Um momento para agradecer.</strong> Pare por um minutinho e pense em algo pelo qual você é grato: uma pessoa, uma conquista, um aprendizado ou uma pequena coisa que traz leveza.</p>
+                <div class="post-comment-preview"><strong>Aline Crivelli</strong><p>O sucesso não acontece de uma vez. Ele é construído todos os dias.</p></div>
+                <div class="social-actions"><button type="button" data-historical-like disabled title="Registro histórico"><span>♡</span> Curtir <b>8</b></button><button type="button" data-comment-toggle>Comentar <b>5</b></button></div>
+                
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="campaign-highlight" aria-labelledby="campaign-highlight-title">
+          <div class="campaign-ribbon" aria-hidden="true"><img src="assets/ribbon-pink.svg" alt=""></div>
+          <div>
+            <p class="section-kicker">Campanha em destaque</p>
+            <h2 id="campaign-highlight-title">Esquenta Outubro Rosa</h2>
+            <p>Confira a iniciativa e o sorteio de inscrições para corridas solidárias divulgado pela equipe responsável.</p>
+          </div>
+          <a class="button button-primary" href="#/campanhas">Conhecer a campanha</a>
+        </section>
+
+        <section class="privacy-banner" aria-labelledby="privacy-title">
+          <span aria-hidden="true"><img src="assets/icon-privacidade.svg" alt=""></span>
+          <div><p class="section-kicker light">Sua privacidade é prioridade</p><h2 id="privacy-title">Cuidado com sigilo, ética e confidencialidade.</h2><p>Informações médicas permanecem protegidas e separadas dos dados operacionais dos benefícios. Gestores visualizam somente indicadores agregados.</p></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="page" id="page-atendimento" data-page="atendimento" hidden>
+      <div class="service-container">
+        <nav class="breadcrumb" aria-label="Caminho da página"><a href="#/mural">Mural</a><span>/</span><span>Atendimento</span></nav>
+        <header class="benefits-header">
+          <div class="benefits-hero-top">
+            <div class="benefits-hero-copy"><p class="section-kicker light">Saúde integral</p><h1>Encontre o cuidado certo para cada momento.</h1><p>Atendimento médico, saúde mental, benefícios, segurança, inclusão e canais de acolhimento reunidos em um único lugar.</p><button class="button button-accent" type="button" data-help-open>Preciso de orientação</button></div>
+            <img class="benefits-hero-diamond" src="assets/selena-simbolo-e.png" alt="" aria-hidden="true">
+          </div>
+        <section class="historical-service" aria-labelledby="service-history-title">
+          <div class="historical-service-info"><p class="section-kicker light">Espaço Saúde · Serviços clínicos e operacionais</p><h2 id="service-history-title">Atendimento presencial, telemedicina e cuidados clínicos</h2><p>Estrutura informada pelo Espaço Saúde com suporte em São Paulo e Londrina e atendimento remoto.</p>
+            <dl><div><dt>Telemedicina</dt><dd>segunda a sexta, 9h às 17h</dd></div><div><dt>São Paulo (presencial)</dt><dd>terça, 8h às 11h; quarta, 14h às 17h</dd></div><div><dt>Londrina (presencial)</dt><dd>segunda, 13h30 às 14h30; terça, 8h às 12h; quarta e quinta, 13h30 às 17h; sexta, 13h às 16h</dd></div></dl>
+          </div>
+          <div class="clinical-services-grid" aria-label="Serviços clínicos organizados">
+            <div class="service-item"><strong>Telemedicina</strong><span>Consultas médicas online para colaboradores e dependentes elegíveis.</span></div>
+            <div class="service-item"><strong>Consultas presenciais</strong><span>Atendimento médico nas sedes de São Paulo e Londrina.</span></div>
+            <div class="service-item"><strong>Aferição de pressão</strong><span>Monitoramento contínuo de sinais vitais e pressão arterial.</span></div>
+            <div class="service-item"><strong>Curativos e primeiros socorros</strong><span>Atendimento inicial, higienização e curativos ambulatoriais.</span></div>
+            <div class="service-item"><strong>Orientações de saúde</strong><span>Acolhimento preventivo, esclarecimento de dúvidas e triagem.</span></div>
+            <div class="service-item"><strong>Exames ocupacionais</strong><span>Periódicos, admissionais, demissionais e de retorno sob coordenação de SST.</span></div>
+          </div>
+          <div class="health-wayfinding-entry"><div><h3>Como encontrar o Espaço Saúde?</h3><p>Explore a planta da unidade e conheça o percurso com a Selena.</p></div><button type="button" class="button button-accent" data-open-wayfinding="londrina" data-wayfinding-destination="health">Ver mapa do Espaço Saúde</button></div>
+          <p class="validation-note"><strong>Horários de comunicado anterior:</strong> confirme com a equipe do Espaço Saúde antes de usar estes horários como agenda atual. A telemedicina para colaboradores e dependentes elegíveis e a gratuidade sem coparticipação também constam daquele comunicado, sujeitos à confirmação.</p>
+        </section>
+
+        </header>
+
+        <section class="benefits-grid" aria-label="Benefícios de saúde e bem-estar">
+          <article class="benefit-card featured-benefit"><div class="benefit-logo company-logo vidalink-logo"><img src="assets/vidalink-logo-trimmed.png" alt="Vidalink"></div><span class="benefit-type">Medicamentos e bem-estar</span><h2>Vidalink</h2><p>Plano de medicamentos e recursos de bem-estar conforme a modalidade contratada pela empresa.</p><a href="https://vidalink.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Vidalink, abre em nova aba">Como acessar <span aria-hidden="true">↗</span></a></article>
+          <article class="benefit-card"><div class="benefit-logo wide"><img src="assets/sulamerica-logo.png" alt="SulAmérica"></div><span class="benefit-type">Plano de saúde</span><h2>SulAmérica Saúde</h2><p>Informações sobre rede, carteirinha, cobertura e canais digitais conforme o plano elegível.</p><a href="https://portal.sulamericaseguros.com.br/saude" target="_blank" rel="noopener noreferrer" aria-label="Consultar SulAmérica Saúde, abre em nova aba">Consultar meu plano <span aria-hidden="true">↗</span></a></article>
+          <article class="benefit-card"><div class="benefit-logo wide unimed-logo"><img src="assets/unimed-logo.svg" alt="Unimed"></div><span class="benefit-type">Plano de saúde</span><h2>Unimed</h2><p>Informações sobre cobertura, rede credenciada e carteirinha digital para colaboradores elegíveis ao plano Unimed.</p><a href="https://www.unimed.coop.br/site/web/unimedfesp/canais-de-atendimento" target="_blank" rel="noopener noreferrer" aria-label="Consultar Unimed Fesp, abre em nova aba">Consultar meu plano <span aria-hidden="true">↗</span></a></article>
+          <article class="benefit-card company-logo wellhub-logo"><div class="benefit-logo company-logo wellhub-logo"><img src="assets/wellhub-logo.png" alt="Wellhub"></div><span class="benefit-type">Atividade e bem-estar</span><h2>Wellhub</h2><p>Acesso a academias, estúdios e aplicativos de bem-estar conforme o plano disponível.</p><a href="https://wellhub.com/pt-br/" target="_blank" rel="noopener noreferrer" aria-label="Conhecer o Wellhub, abre em nova aba">Conhecer o benefício <span aria-hidden="true">↗</span></a></article>
+          <article class="benefit-card guapeco-benefit-card" id="guapeco-benefit"><div class="benefit-logo internal"><img src="assets/icon-pet.svg" alt="Benefício pet"></div><span class="benefit-type">Benefícios para a família</span><h2>Guapeco</h2><p>Cuidado para cães e gatos. Consulte a cartilha pet e as condições da oferta anunciada para outubro.</p><a href="#/campanha?slug=guapeco-outubro-2026">Ver cartilha e condições <span aria-hidden="true">→</span></a></article>
+          <article class="benefit-card"><div class="benefit-logo internal"><img src="assets/icon-espaco-saude.svg" alt="Símbolo do Espaço Saúde"></div><span class="benefit-type">Acolhimento e orientação</span><h2>Espaço Saúde</h2><p>Telemedicina, consultas presenciais, aferição de pressão, curativos, primeiros cuidados, orientação médica e exames ocupacionais.</p><button type="button" data-help-open data-help-panel="health">Solicitar orientação <span aria-hidden="true">→</span></button></article>
+          <article class="benefit-card"><div class="benefit-logo internal"><img src="assets/icon-massoterapia.svg" alt="Símbolo de massoterapia"></div><span class="benefit-type">Cuidado presencial</span><h2>Massoterapia</h2><p>Atendimentos em São Paulo e Londrina, com agenda, lembretes e recursos acessíveis.</p><a href="#/massoterapia">Ver massoterapia <span aria-hidden="true">→</span></a></article>
+          <article class="benefit-card official-channel-card"><div class="benefit-logo internal"><img src="assets/icon-etica.svg" alt="Símbolo de Ouvidoria"></div><span class="benefit-type">Governança e sigilo</span><h2>Canal institucional</h2><p>Em produção, esta área deve apontar para o canal oficial autorizado pela organização.</p><span class="text-link">Link removido da demonstração pública</span></article>
+          <article class="benefit-card official-channel-card"><div class="benefit-logo internal"><img src="assets/icon-inclusao.svg" alt="Símbolo de Diversidade"></div><span class="benefit-type">Comunidade e inclusão</span><h2>Canal de Diversidade & Inclusão</h2><p>Espaço reservado para o canal oficial do Comitê de Diversidade, grupos de afinidade e acessibilidade.</p><button type="button" data-demo-action="Espaço reservado: o canal oficial de Diversidade será disponibilizado pelo Comitê de D&I e RH.">Canal de Diversidade <span aria-hidden="true">→</span></button></article>
+          <article class="benefit-card pending-benefit"><div class="benefit-logo internal"><img src="assets/icon-beneficios.svg" alt="Símbolo de benefícios"></div><span class="benefit-type">Conforme elegibilidade</span><h2>Demais planos e convênios</h2><p>Outros benefícios aparecerão conforme perfil, unidade e informações validadas pelo RH.</p><button type="button" data-help-open>Consultar meu acesso <span aria-hidden="true">→</span></button></article>
+          <article class="benefit-card pending-benefit" id="rh-portal-card"><div class="benefit-logo internal"><img src="assets/icon-beneficios.svg" alt=""></div><span class="benefit-type">Acesso interno</span><h2>Portal do RH</h2><p>Endereço oficial ainda não fornecido. O botão será ativado quando o link for confirmado.</p><span class="link-pending">Link pendente de confirmação</span></article>
+        </section>
+
+        <p class="benefits-disclaimer">Cobertura, elegibilidade, valores, contatos e horários podem variar. Informações devem ser confirmadas com RH, Benefícios e SST antes da implantação oficial.</p>
+
+        <section class="health-paths" aria-labelledby="health-paths-title">
+          <div class="section-heading-inline"><div><p class="section-kicker">Escolha pelo que você precisa</p><h2 id="health-paths-title">Cuidado, acolhimento e proteção</h2></div><p>Cada necessidade segue para o canal responsável, sem misturar informações médicas e relatos sensíveis.</p></div>
+          <div class="health-path-grid">
+            <article><span class="health-path-icon"><img src="assets/icon-mental.svg" alt=""></span><h3>Saúde mental</h3><p>Apoio psicológico, teleatendimento, conteúdos de autocuidado, estresse, ansiedade e riscos psicossociais.</p><button type="button" data-help-open data-help-panel="mental">Encontrar apoio</button></article>
+            <article><span class="health-path-icon"><img src="assets/icon-mulheres.svg" alt=""></span><h3>Mulheres e equidade</h3><p>Saúde da mulher, prevenção, maternidade, climatério, enfrentamento à violência e grupos de afinidade.</p><button type="button" data-help-open data-help-panel="women">Ver canais</button></article>
+            <article><span class="health-path-icon"><img src="assets/icon-inclusao.svg" alt=""></span><h3>Respeito e inclusão</h3><p>Orientação sobre racismo, capacitismo, LGBTfobia, neurodiversidade, acessibilidade e comunicação inclusiva.</p><button type="button" data-help-open data-help-panel="inclusion">Buscar orientação</button></article>
+            <article><span class="health-path-icon"><img src="assets/icon-etica.svg" alt=""></span><h3>Ética e denúncia</h3><p>Canal independente para relatar assédio, discriminação ou outra conduta inadequada, com orientações sobre sigilo e anonimato.</p><button type="button" data-help-open data-help-panel="ethics">Conhecer o canal</button></article>
+            <article><span class="health-path-icon"><img src="assets/icon-sst.svg" alt=""></span><h3>RH, SST e CIPA</h3><p>Direcionamento para questões trabalhistas, saúde ocupacional, prevenção de riscos e participação da CIPA.</p><button type="button" data-help-open data-help-panel="work">Encontrar contato</button></article>
+            <article class="urgent-path"><span class="health-path-urgent" aria-hidden="true">!</span><h3>Preciso de ajuda urgente</h3><p>Orientação imediata para situações de risco à vida, crise emocional ou violência. Emergência não deve aguardar resposta por e-mail.</p><button type="button" data-help-open data-help-panel="urgent">Ver ajuda urgente</button></article>
+          </div>
+        </section>
+
+        <section class="nr1-feature" aria-labelledby="nr1-title">
+          <div class="nr1-symbol" aria-hidden="true"><img src="assets/icon-mental.svg" alt=""></div>
+          <div><p class="section-kicker light">Saúde mental no trabalho</p><h2 id="nr1-title">NR‑1 e riscos psicossociais</h2><p>Desde 26 de maio de 2026, fatores psicossociais relacionados ao trabalho fazem parte expressamente do Gerenciamento de Riscos Ocupacionais. Sobrecarga, assédio, falta de autonomia, apoio insuficiente e isolamento no trabalho remoto precisam ser identificados, avaliados e tratados no GRO/PGR.</p><div class="nr1-actions"><button class="button button-accent" type="button" data-help-open data-help-panel="nr1">Entender e buscar orientação</button><a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-1" target="_blank" rel="noopener">Consultar fonte oficial ↗</a></div></div>
+        </section>
+
+        <section class="data-boundary" aria-labelledby="data-boundary-title">
+          <div><p class="section-kicker">Proteção de dados</p><h2 id="data-boundary-title">Centralizar o acesso não significa misturar informações.</h2></div>
+          <p>Prontuários e conversas médicas não entram no Monday nem na agenda da massoterapia. Portal apenas direciona cada pessoa ao serviço correto; relatórios corporativos utilizam dados agregados e não clínicos.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="page" id="page-campanhas" data-page="campanhas" hidden>
+      <div class="service-container">
+        <nav class="breadcrumb" aria-label="Caminho da página"><a href="#/mural">Mural</a><span>/</span><span>Campanhas</span></nav>
+        <header class="campaigns-header"><p class="section-kicker">Saúde em movimento</p><h1>Campanhas e iniciativas</h1><p>Acompanhe ações atuais e consulte o histórico de campanhas de saúde e bem-estar.</p></header>
+        <section class="campaign-feature-card selena-go-feature" aria-labelledby="selena-go-title">
+          <div class="pink-visual"><img class="campaign-feature-photo" src="assets/desafio-movimento.png" alt="Participantes praticando atividades físicas inclusivas no Desafio Movimento"><span class="campaign-photo-ribbon" aria-hidden="true">🏃‍♂️</span></div>
+          <div><span class="campaign-status">Encerrado · resultado divulgado em 21/10</span><span class="content-category">Movimento & Hábitos Saudáveis</span><h2 id="selena-go-title">Desafio Movimento</h2><p>126 colaboradores participaram do Desafio Movimento. Confira os oito sorteados e os prêmios divulgados pelo RH.</p><div class="card-action-row"><a class="button button-primary" href="#/campanha?slug=selena-go">Conhecer o desafio e o resultado</a></div></div>
+        </section>
+        <section class="campaign-feature-card" aria-labelledby="pink-title">
+          <div class="pink-visual"><img class="campaign-feature-photo" src="assets/outubro-rosa-campanha.png" alt="Mulheres reunidas em apoio à conscientização e prevenção no Outubro Rosa"><span class="campaign-photo-ribbon" aria-hidden="true"><img src="assets/ribbon-pink.svg" alt=""></span></div>
+          <div><span class="campaign-status active">Campanha 2026</span><span class="content-category">Programação de outubro</span><h2 id="pink-title">Esquenta Outubro Rosa</h2><p>Confira a programação do mês: corridas, Talk Show, bioimpedância, materiais de prevenção e os resultados recebidos.</p><a class="button button-primary" href="#/campanha?slug=outubro-rosa-2026">Ver programação e resultados</a></div>
+        </section>
+
+        <section class="official-health-section" aria-labelledby="official-links-title">
+          <div class="section-heading-inline"><div><p class="section-kicker">Canais públicos de saúde</p><h2 id="official-links-title">Recursos oficiais do SUS e Ministério da Saúde</h2></div><p>Atalhos diretos e verificados para fontes oficiais de vacinação, saúde digital e campanhas nacionais.</p></div>
+          <div class="official-links-grid">
+            <article class="official-link-card">
+              <span class="official-badge">SUS / Governo Federal</span>
+              <h3>Calendário Nacional de Vacinação</h3>
+              <p>Consulte as vacinas recomendadas para cada fase da vida (crianças, adolescentes, adultos e idosos) e mantenha sua caderneta em dia.</p>
+              <a href="https://www.gov.br/saude/pt-br/vacinacao/calendario" target="_blank" rel="noopener noreferrer" class="button button-outline">Acessar Calendário Nacional ↗</a>
+            </article>
+            <article class="official-link-card">
+              <span class="official-badge">SUS Digital</span>
+              <h3>Meu SUS Digital</h3>
+              <p>Histórico de atendimentos no SUS, carteira nacional de vacinação digital, medicamentos recebidos e agendamento de serviços.</p>
+              <a href="https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/meususdigital" target="_blank" rel="noopener noreferrer" class="button button-outline">Acessar Meu SUS Digital ↗</a>
+            </article>
+            <article class="official-link-card">
+              <span class="official-badge">Ministério da Saúde</span>
+              <h3>Campanhas do Ministério da Saúde</h3>
+              <p>Acompanhe informativos, orientações preventivas e diretrizes oficiais das campanhas de saúde pública no Brasil.</p>
+              <a href="https://www.gov.br/saude/pt-br/campanhas-da-saude" target="_blank" rel="noopener noreferrer" class="button button-outline">Acessar Campanhas Oficiais ↗</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="prevention-guidelines" aria-labelledby="prevention-guide-title">
+          <div class="section-heading-inline"><div><p class="section-kicker">Autocuidado contínuo</p><h2 id="prevention-guide-title">Orientações atemporais de prevenção e bem-estar</h2></div><p>Práticas fundamentais para a saúde física, mental e preventiva em qualquer época do ano.</p></div>
+          <div class="guidelines-grid">
+            <div><strong>Hidratação contínua</strong><p>Beba água regularmente ao longo do dia para manter a regulação térmica, a digestão e a clareza cognitiva.</p></div>
+            <div><strong>Vacinação em dia</strong><p>A imunização protege você e as pessoas ao seu redor contra doenças graves e de fácil transmissão.</p></div>
+            <div><strong>Pausas ativas e ergonomia</strong><p>Faça pequenas pausas para levantar, alongar e mudar a postura, aliviando a tensão lombar e nos ombros.</p></div>
+            <div><strong>Alimentação consciente</strong><p>Prefira alimentos naturais e refeições balanceadas, priorizando frutas, verduras e proteínas magras.</p></div>
+            <div><strong>Higiene do sono</strong><p>Mantenha horários regulares para dormir e desacelere o ritmo antes de deitar, evitando telas em excesso.</p></div>
+            <div><strong>Cuidado emocional</strong><p>Reconheça seus limites, compartilhe sentimentos com pessoas de confiança e busque apoio profissional sempre que precisar.</p></div>
+            <div><strong>Higiene das mãos</strong><p>Lave as mãos com água e sabão ou use álcool em gel, especialmente antes das refeições e depois de tossir ou espirrar.</p></div>
+            <div><strong>Etiqueta respiratória</strong><p>Ao tossir ou espirrar, cubra nariz e boca com o antebraço ou um lenço. Descarte o lenço e higienize as mãos.</p></div>
+            <div><strong>Movimento para todos</strong><p>Encontre uma forma de se movimentar adequada às suas possibilidades. Caminhar, dançar, fazer pausas ativas e praticar atividades adaptadas também contam.</p></div>
+            <div><strong>Proteção solar</strong><p>Ao passar tempo ao ar livre, procure sombra e use proteção adequada para a pele, especialmente nos horários de sol mais intenso.</p></div>
+          </div>
+        </section>
+
+        <section class="general-calendar-section" aria-labelledby="general-calendar-title">
+          <div class="section-heading-inline">
+            <div>
+              <p class="section-kicker">Programação oficial</p>
+              <h2 id="general-calendar-title">Calendário geral de atividades de outubro de 2026</h2>
+            </div>
+            <p>Acompanhe todos os encontros, desafios e ações de saúde e prevenção do mês.</p>
+          </div>
+          <div class="general-calendar-grid">
+            <article class="general-calendar-card">
+              <time>01/10/2026</time>
+              <h3>Sorteio Esquenta Outubro Rosa</h3>
+              <p>Resultado divulgado pela Comunicação Interna com as 10 inscrições sorteadas para São Paulo e Londrina.</p>
+            </article>
+            <article class="general-calendar-card promo-bg">
+              <time>05 a 13/10/2026</time>
+              <h3>Wellhub: 1º mês por R$ 1</h3>
+              <p>Oferta para você e familiares elegíveis até o plano Silver. <a href="#/campanha?slug=wellhub-familia" class="text-link">Ver condições →</a></p>
+            </article>
+            <article class="general-calendar-card">
+              <time>06/10/2026</time>
+              <h3>Webinar Wellhub “Você Sabia?”</h3>
+              <p>Apresentação das novidades dos planos e detalhes do Desafio Movimento.</p>
+            </article>
+            <article class="general-calendar-card go-bg">
+              <time>09/10/2026</time>
+              <h3>Início do Desafio Movimento</h3>
+              <p>Abertura oficial da campanha de movimento, passos e check-ins com meta de 96.000 pontos.</p>
+            </article>
+            <article class="general-calendar-card">
+              <time>11/10/2026</time>
+              <h3>64ª Corrida contra o Câncer de Mama</h3>
+              <p>Prova esportiva e caminhada solidária prevista em São Paulo.</p>
+            </article>
+            <article class="general-calendar-card promo-bg">
+              <time>13/10/2026</time>
+              <h3>Último dia Wellhub por R$ 1</h3>
+              <p>Encerramento da janela promocional para adesão e reativações com primeiro mês a R$ 1.</p>
+            </article>
+            <article class="general-calendar-card pink-bg">
+              <time>14/10/2026 · 15h</time>
+              <h3>Webinar Câncer Colorretal</h3>
+              <p>Abertura das ações do Outubro Rosa com Dr. José Tarcísio Penteado Buschinelli pelo Teams.</p>
+            </article>
+            <article class="general-calendar-card go-bg">
+              <time>16/10/2026</time>
+              <h3>Encerramento do Desafio Movimento</h3>
+              <p>Último dia para pontuação de passos e check-ins do desafio oficial.</p>
+            </article>
+            <article class="general-calendar-card">
+              <time>18/10/2026</time>
+              <h3>10ª Go Pink – Corrida em Londrina</h3>
+              <p>Corrida e caminhada de conscientização do Outubro Rosa prevista em Londrina.</p>
+            </article>
+            <article class="general-calendar-card">
+              <time>19/10/2026</time>
+              <h3>Sorteio previsto · Desafio Movimento</h3>
+              <p>Sorteio dos 8 prêmios entre os participantes do desafio (sorteio previsto).</p>
+            </article>
+          </div>
+        </section>
+        <section class="campaign-list" aria-labelledby="campaign-list-title">
+          <div class="section-heading-inline"><div><p class="section-kicker">Histórico recuperado</p><h2 id="campaign-list-title">Campanhas e iniciativas de 2021 a 2026</h2></div><p>Conteúdos reconstruídos a partir de 284 registros da comunidade do Espaço Saúde.</p></div>
+          <div class="archive-filters" role="group" aria-label="Filtrar histórico"><button class="active" type="button" data-campaign-filter="all">Todos</button><button type="button" data-campaign-filter="mental">Saúde mental</button><button type="button" data-campaign-filter="prevention">Prevenção</button><button type="button" data-campaign-filter="movement">Movimento</button><button type="button" data-campaign-filter="inclusion">Inclusão</button></div>
+          <div class="campaign-archive-grid" id="campaign-archive-grid">
+            <article data-campaign-category="mental"><div><img class="campaign-ribbon-image" src="assets/ribbon-yellow.svg" alt="Laço amarelo"><span class="campaign-status closed">Histórico · 2026</span></div><h3>Mural do Bem-estar · Setembro Amarelo</h3><p>Sequência interativa de autocuidado, equilíbrio emocional, gratidão e pequenas conquistas durante o Setembro Amarelo.</p></article>
+            <article data-campaign-category="prevention"><div><img class="campaign-ribbon-image" src="assets/ribbon-red.svg" alt="Laço vermelho"><span class="campaign-status closed">Histórico · 2025</span></div><h3>Junho Vermelho</h3><p>Convite à doação voluntária de sangue e ao compartilhamento opcional da participação.</p></article>
+            <article data-campaign-category="inclusion"><div><img class="campaign-symbol-image" src="assets/icon-autismo.svg" alt="Símbolo da neurodiversidade"><span class="campaign-status closed">Histórico · 2026</span></div><h3>Orgulho Autista e comunicação inclusiva</h3><p>Conteúdos sobre neurodiversidade e webinar sobre interação e acolhimento de pessoas surdas.</p></article>
+            <article data-campaign-category="mental"><div><img class="campaign-ribbon-image" src="assets/ribbon-yellow.svg" alt="Laço amarelo"><span class="campaign-status closed">Encerrada · 2025</span></div><h3>Setembro Amarelo</h3><p>Webinares, quiz de acolhimento, pausa consciente e orientações para reconhecer sofrimento emocional.</p></article>
+            <article data-campaign-category="movement"><div><img class="campaign-symbol-image" src="assets/icon-habito.svg" alt="Símbolo de hábitos saudáveis"><span class="campaign-status closed">Encerrada · 2025</span></div><h3>Mude1Hábito</h3><p>Desafio de 21 dias com fotos no Viva Engage, pontos no Wellhub, mais de 100 interações e 146 participantes ativos.</p></article>
+            <article data-campaign-category="inclusion"><div><img class="campaign-symbol-image" src="assets/icon-programa-inclui.svg" alt="Símbolo de inclusão"><span class="campaign-status closed">Encerrada · 2025</span></div><h3>Programa Inclui 2025</h3><p>Acompanhamento personalizado para colaboradores com deficiência e orientação para atualização cadastral.</p></article>
+            <article data-campaign-category="prevention"><div><span class="campaign-ribbon-pair" aria-label="Laços rosa e azul"><img class="campaign-ribbon-image" src="assets/ribbon-pink.svg" alt=""><img class="campaign-ribbon-image" src="assets/ribbon-blue.svg" alt=""></span><span class="campaign-status closed">Encerrada · 2025</span></div><h3>Circuito Outubro Rosa e Novembro Azul</h3><p>Autocuidado, prevenção e divulgação de exames elegíveis com isenção de coparticipação.</p></article>
+            <article data-campaign-category="prevention"><div><img class="campaign-symbol-image" src="assets/icon-sipat.svg" alt="Símbolo de saúde e segurança no trabalho"><span class="campaign-status closed">Encerrada · 2025</span></div><h3>SIPAT e saúde ocupacional</h3><p>Autocuidado, qualidade de vida, estresse, movimento, alimentação, exames de rotina e segurança.</p></article>
+            <article data-campaign-category="movement"><div><img class="campaign-symbol-image" src="assets/icon-desafio-21.svg" alt="Símbolo de desafio de hábitos"><span class="campaign-status closed">Encerrada · 2024</span></div><h3>Desafio dos 21 Dias</h3><p>Calendário de hábitos com fotos da comunidade, atividade física, sono, alimentação, meditação e bem-estar financeiro.</p></article>
+            <article data-campaign-category="mental"><div><img class="campaign-ribbon-image" src="assets/ribbon-white.svg" alt="Laço branco"><span class="campaign-status closed">Encerrada · 2024</span></div><h3>Janeiro Branco</h3><p>Transformar, renovar e inspirar: campanha de promoção da saúde mental, autocuidado e procura de ajuda profissional.</p></article>
+            <article data-campaign-category="inclusion"><div><img class="campaign-symbol-image" src="assets/icon-saude-inclusao.svg" alt="Símbolo de saúde inclusiva"><span class="campaign-status closed">Histórico · 2023</span></div><h3>Espaço Saúde & Inclusão</h3><p>Acolhimento, apoio psicológico, orientação médica e projeto de acompanhamento de pessoas com deficiência.</p></article>
+            <article data-campaign-category="mental"><div><img class="campaign-symbol-image" src="assets/icon-emocional.svg" alt="Símbolo de saúde emocional"><span class="campaign-status closed">Histórico · 2022</span></div><h3>Saúde emocional e autoestima</h3><p>Conteúdos sobre terapia, autocuidado, autoestima, estresse, sono e prevenção ao suicídio.</p></article>
+            <article data-campaign-category="prevention"><div><img class="campaign-symbol-image" src="assets/icon-comunidade-saude.svg" alt="Símbolo da comunidade de saúde"><span class="campaign-status closed">Origem · 2021</span></div><h3>Início da comunidade Espaço Saúde</h3><p>Canal de notícias sobre promoção da saúde, qualidade de vida, terapia, gestação, patologias clínicas e Covid-19.</p></article>
+            <article data-campaign-category="prevention"><div><img class="campaign-ribbon-image" src="assets/ribbon-pink.svg" alt="Laço rosa"><span class="campaign-status closed">Histórico · 2022</span></div><h3>Outubro Rosa</h3><p>Registro de fotos das equipes de São Paulo e Londrina e webinar sobre câncer de mama. Arquivos em organização.</p></article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="page" id="page-campanha" data-page="campanha" hidden>
+      <div class="service-container campaign-detail-shell">
+        <nav class="breadcrumb" aria-label="Caminho da página"><a href="#/campanhas">Campanhas</a><span>/</span><span id="campaign-breadcrumb">Detalhes</span></nav>
+        <div id="campaign-detail-content" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-acessibilidade" data-page="acessibilidade" hidden>
+      <div class="service-container">
+        <nav class="breadcrumb" aria-label="Caminho da página"><a href="#/mural">Mural</a><span>/</span><span>Acessibilidade</span></nav>
+        <header class="accessibility-header"><p class="section-kicker light">Proposta do piloto</p><h1>Uma jornada acessível começa antes do atendimento.</h1><p>Recursos digitais, orientação, espaço físico e procedimentos precisam funcionar como um único sistema.</p></header>
+        <section class="access-route" aria-labelledby="route-title"><div class="section-heading-inline"><div><p class="section-kicker">Como chegar</p><h2 id="route-title">Rota acessível até a sala</h2></div><p>Projeto físico deverá ser validado com usuários e por profissional habilitado.</p></div><ol><li><span>1</span><div><strong>Antes de sair</strong><p>Mapa, fotos, texto e orientação em áudio disponíveis no portal.</p></div></li><li><span>2</span><div><strong>Entrada e recepção</strong><p>Atendimento treinado, identificação clara e opção de solicitar apoio.</p></div></li><li><span>3</span><div><strong>Deslocamento</strong><p>Rota desobstruída, sinalização visual e tátil e piso tátil onde o projeto indicar.</p></div></li><li><span>4</span><div><strong>Identificação da sala</strong><p>Placa contrastante, relevo, Braille e ponto NFC ou QR com marcador tátil.</p></div></li></ol></section>
+        <section class="room-standard" aria-labelledby="room-title"><div><p class="section-kicker light">Ambiente previsível</p><h2 id="room-title">Sala organizada para autonomia</h2><p>Layout permanece fixo. Mudanças são comunicadas e apresentadas antes dos atendimentos.</p></div><ul><li>Circulação sem fios, tapetes ou obstáculos</li><li>Materiais em posições padronizadas</li><li>Etiquetas táteis, letras grandes e contraste</li><li>Espaço para cadeira de rodas e transferência</li><li>Alertas visuais e sonoros</li><li>Estação SELENA com monitor grande, voz, texto e teclado</li></ul></section>
+        <section class="inclusive-options" aria-labelledby="options-title"><div class="section-heading-inline"><div><p class="section-kicker">Desenho universal</p><h2 id="options-title">Uma informação, diferentes formas de acesso</h2></div><p>Nenhum canal é obrigatório.</p></div><div class="inclusive-grid"><article><strong>Visual e baixa visão</strong><p>Leitor de tela, áudio, contraste, zoom, Braille e referências táteis.</p></article><article><strong>Auditiva</strong><p>Texto, legendas, alertas visuais e vibração.</p></article><article><strong>Física</strong><p>Circulação acessível, comandos por voz ou teclado e mobiliário adequado.</p></article><article><strong>Sensorial e cognitiva</strong><p>Fluxo previsível, linguagem simples e iluminação ajustável.</p></article></div></section>
+      </div>
+    </section>
+
+    <section class="page" id="page-sobre" data-page="sobre" hidden>
+      <div class="service-container">
+        <nav class="breadcrumb" aria-label="Caminho da página"><a href="#/mural">Mural</a><span>/</span><span>Sobre</span></nav>
+        <section class="about-hero"><p class="section-kicker light">Sobre o Espaço Saúde</p><h1>Um ponto de encontro para cuidado, informação e autonomia.</h1><p>Esta proposta evolui o canal já existente na organização parceira e reúne, em uma experiência acessível, conteúdos, campanhas, benefícios e serviços de saúde e bem-estar.</p></section>
+        <section class="about-grid" aria-label="Princípios do portal"><article><span>01</span><h2>Um único ponto de acesso</h2><p>Informações atualizadas ficam reunidas, sem depender de procurar mensagens antigas ou descobrir com quem falar.</p></article><article><span>02</span><h2>Acessível para diferentes pessoas</h2><p>Voz, texto, contraste, ampliação, teclado e alternativas presenciais coexistem na mesma jornada.</p></article><article><span>03</span><h2>Privacidade por princípio</h2><p>Dados médicos permanecem separados das informações operacionais necessárias para administrar benefícios.</p></article></section>
+        <section class="history-timeline" aria-labelledby="history-title"><div class="section-heading-inline"><div><p class="section-kicker">Memória e evolução</p><h2 id="history-title">Uma história de cuidado desde 2021</h2></div><p>O PDF histórico reúne 284 registros da comunidade.</p></div><ol><li><time>2021</time><div><strong>Nasce a comunidade Espaço Saúde</strong><p>Promoção da saúde, qualidade de vida, terapia, gestação, orientação clínica e apoio durante a Covid-19.</p></div></li><li><time>2022</time><div><strong>Conteúdo preventivo e emocional</strong><p>Saúde mental, autoestima, sono, atividade física, saúde da mulher e prevenção.</p></div></li><li><time>2023</time><div><strong>Inclusão e telemedicina</strong><p>Atendimentos presenciais e remotos, apoio psicológico e acompanhamento de pessoas com deficiência.</p></div></li><li><time>2024</time><div><strong>Comunidade em movimento</strong><p>Desafio dos 21 Dias, fotos no Viva Engage, ergonomia, bem-estar e campanhas de prevenção.</p></div></li><li><time>2025</time><div><strong>Mude1Hábito e Programa Inclui</strong><p>Integração com Wellhub, campanhas interativas, SIPAT, diversidade e informação de saúde.</p></div></li><li><time>2026</time><div><strong>Mural do Bem-estar</strong><p>Escuta, equilíbrio emocional, gratidão, pequenas conquistas e evolução para o Portal de Bem-estar.</p></div></li></ol></section>
+        <section class="gptw-panel" aria-labelledby="gptw-title"><div><p class="section-kicker light">Cultura que cuida</p><h2 id="gptw-title">Cuidado, segurança psicológica e compromisso contínuo.</h2><p>O portal conecta saúde integral, diversidade, inclusão e qualidade de vida. Certificações e reconhecimentos só devem ser publicados após autorização formal da organização responsável.</p></div></section>
+        <section class="about-project"><div><p class="section-kicker">Protótipo</p><h2>Projeto do Grupo 3</h2><p>Hipótese desenvolvida para o Desafio de Inovação do Programa de Estágio 2026. Conteúdos, contas, profissionais e horários devem ser validados antes de uma implantação real.</p></div><button class="button button-accent" type="button" data-help-open>Preciso de orientação</button></section>
+      </div>
+    </section>
+
+    <section class="page" id="page-artigo" data-page="artigo" hidden>
+      <div class="article-container">
+        <nav class="breadcrumb" aria-label="Caminho da página"><a href="#/mural">Mural</a><span>/</span><span>Conteúdos</span></nav>
+        <article class="article-layout">
+          <header class="article-header">
+            <span class="content-category">Mural do Bem-estar · 25/09/2026</span>
+            <h1>Como você quer se sentir nos próximos dias?</h1>
+            <p class="article-lead">Cuidado também pode significar desacelerar e reconhecer aquilo de que precisamos.</p>
+            <div class="article-author"><span class="social-avatar image-avatar"><img src="assets/avatar-gizele-v1.png" alt="Avatar ilustrativo de Equipe do Espaço Saúde"></span><div><strong>Equipe do Espaço Saúde</strong><small>Publicado em 25/09/2026, às 9h38 · atualizado a partir do histórico do Espaço Saúde</small></div></div>
+          </header>
+          <aside class="article-summary"><strong>Neste conteúdo</strong><a href="#pausas">Pequenas pausas</a><a href="#escolha">Uma escolha possível</a><a href="#beneficios">Benefícios disponíveis</a></aside>
+          <div class="article-body">
+            <p>Nem sempre precisamos de grandes planos para cuidar de nós. Às vezes, um momento de descanso, uma caminhada, ouvir uma música ou simplesmente não fazer nada já pode fazer diferença.</p>
+            <h2 id="pausas">Pequenas pausas</h2>
+            <p>Pausas intencionais ajudam a observar como estamos nos sentindo e a retomar as atividades com mais presença. O importante é encontrar uma possibilidade compatível com a própria rotina.</p>
+            <blockquote>Escolha hoje uma coisa simples que você gostaria de fazer para cuidar de si.</blockquote>
+            <h2 id="escolha">Uma escolha possível</h2>
+            <p>Alongar o corpo, beber água, respirar por alguns minutos ou reservar um horário de massoterapia são exemplos de ações que podem ser incorporadas ao dia.</p>
+            <h2 id="beneficios">Benefícios disponíveis</h2>
+            <p>O Espaço Saúde reúne informações e caminhos de acesso aos serviços e benefícios de saúde e bem-estar oferecidos pela empresa.</p>
+            <a class="button button-primary" href="#/massoterapia">Conhecer a massoterapia</a>
+            <section class="content-conversation" id="article-comments" aria-labelledby="comments-title">
+              <div class="conversation-heading"><div><p class="section-kicker">Comunidade</p><h2 id="comments-title">Converse sobre este conteúdo</h2></div><button type="button" class="article-like" id="article-like" aria-pressed="false"><span>♡</span> Curtir <b>8</b></button></div>
+              <div class="comment-list" id="article-comment-list"><article><span class="social-avatar orange">JZ</span><div><strong>Colaborador Demo</strong><small>25/09/2026 · 9h41</small><p>O que pretendo fazer neste fim de semana para recarregar as energias é descansar e buscar a Deus. Aproveito e desejo um bom fim de semana a todos!</p></div></article><article><span class="social-avatar">VO</span><div><strong>Colaborador Demo</strong><small>25/09/2026 · 9h43</small><p>Dormir até tarde, visitar meus sogros e fazer calistenia sem preocupação com horários.</p></div></article></div>
+              <form class="article-comment-form" id="article-comment-form"><label for="article-comment"><strong>Deixe seu comentário</strong><span>Compartilhe com respeito e sem publicar informações médicas pessoais.</span></label><textarea id="article-comment" maxlength="500" placeholder="Escreva um comentário..."></textarea><button class="button button-primary" type="submit">Comentar</button></form>
+            </section>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="page-massoterapia" data-page="massoterapia" hidden>
+      <div class="service-container">
+        <nav class="breadcrumb" aria-label="Caminho da página"><a href="#/mural">Mural</a><span>/</span><span>Massoterapia</span></nav>
+
+        <div class="massotherapy-toolbar"><p>Acesso único para colaboradores e profissionais.</p><button class="button button-primary" type="button" data-login-open>Entrar com Google</button></div>
+
+        <section class="massotherapy-overview" aria-labelledby="service-title">
+          <article class="massotherapy-info-panel">
+            <img class="massotherapy-editorial" src="assets/massoterapia-acessivel.png" alt="Imagem ilustrativa de uma profissional organizando uma sala acessível de massoterapia">
+            <p class="section-kicker light">Benefício de saúde e bem-estar</p>
+            <h1 id="service-title">Massoterapia acessível</h1>
+            <p>Consulte profissionais e horários, receba lembretes e encontre orientações acessíveis para chegar e utilizar o serviço com autonomia.</p>
+            <p class="massotherapy-limit-notice"><strong>Benefício de massoterapia:</strong> cada colaborador pode realizar até duas massagens por semana.</p>
+            <p class="massotherapy-attendance-notice">Se não puder comparecer, avise e cancele a reserva para liberar o horário. Como proposta preventiva, faltas sem aviso recorrentes seriam conferidas pelo RH antes de qualquer medida; não há bloqueio automático.</p>
+            <div class="massotherapy-facts" aria-label="Informações do serviço">
+              <div><strong>20 min</strong><span>duração demonstrativa da sessão</span></div>
+              <div><strong>2 unidades</strong><span>São Paulo e Londrina</span></div>
+              <div><strong>Agenda integrada</strong><span>confirmações, cancelamentos e fila de espera</span></div>
+              <div><strong>Acesso inclusivo</strong><span>voz, teclado, tela ampliada e apoio presencial</span></div>
+            </div>
+            <a class="text-link light-link" href="#/acessibilidade">Conhecer a jornada física acessível →</a>
+          </article>
+
+          <aside class="team-panel" aria-labelledby="team-title">
+            <p class="section-kicker light">Profissionais</p><h2 id="team-title">Conheça a equipe</h2>
+            <p class="team-panel-intro">Oito profissionais atendem nas unidades de Londrina e São Paulo nos turnos da manhã e tarde com sessões inclusivas de 20 minutos.</p>
+
+            <div class="team-filters" role="group" aria-label="Filtros da equipe">
+              <div class="team-filter-row">
+                <span class="team-filter-label">Unidade:</span>
+                <button type="button" class="team-filter-btn active" data-team-unit="londrina" aria-pressed="true">Londrina</button>
+                <button type="button" class="team-filter-btn" data-team-unit="sao-paulo" aria-pressed="false">São Paulo</button>
+                <button type="button" class="team-filter-btn" data-team-unit="todas" aria-pressed="false">Ver todos</button>
+              </div>
+              <div class="team-filter-row">
+                <span class="team-filter-label">Turno:</span>
+                <button type="button" class="team-filter-btn active" data-team-shift="todos" aria-pressed="true">Todos</button>
+                <button type="button" class="team-filter-btn" data-team-shift="manha" aria-pressed="false">Manhã (08h às 12h)</button>
+                <button type="button" class="team-filter-btn" data-team-shift="tarde" aria-pressed="false">Tarde (13h às 17h)</button>
+              </div>
+            </div>
+
+            <div class="team-stack" id="public-team-stack">
+              <!-- Londrina -->
+              <div class="team-unit-group" data-unit-group="londrina">
+                <div class="team-group-header">
+                  <h3>Unidade Londrina</h3>
+                  <span class="team-badge">4 profissionais</span>
+                </div>
+
+                <div class="team-shift-subgroup" data-shift-group="manha">
+                  <h4 class="team-shift-title">Turno Manhã · 08h às 12h</h4>
+                  <article class="team-member-card" data-member-unit="londrina" data-member-shift="manha">
+                    <span class="person-avatar green">C</span>
+                    <div>
+                      <h3>Profissional A</h3>
+                      <p><strong>Unidade:</strong> Londrina · <strong>Turno:</strong> Manhã</p>
+                      <small><strong>Horário:</strong> 08h às 12h</small>
+                    </div>
+                  </article>
+                  <article class="team-member-card" data-member-unit="londrina" data-member-shift="manha">
+                    <span class="person-avatar blue">A</span>
+                    <div>
+                      <h3>Profissional B</h3>
+                      <p><strong>Unidade:</strong> Londrina · <strong>Turno:</strong> Manhã</p>
+                      <small><strong>Horário:</strong> 08h às 12h</small>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="team-shift-subgroup" data-shift-group="tarde">
+                  <h4 class="team-shift-title">Turno Tarde · 13h às 17h</h4>
+                  <article class="team-member-card" data-member-unit="londrina" data-member-shift="tarde">
+                    <span class="person-avatar purple">L</span>
+                    <div>
+                      <h3>Profissional C</h3>
+                      <p><strong>Unidade:</strong> Londrina · <strong>Turno:</strong> Tarde</p>
+                      <small><strong>Horário:</strong> 13h às 17h</small>
+                    </div>
+                  </article>
+                  <article class="team-member-card" data-member-unit="londrina" data-member-shift="tarde">
+                    <span class="person-avatar teal">M</span>
+                    <div>
+                      <h3>Profissional D</h3>
+                      <p><strong>Unidade:</strong> Londrina · <strong>Turno:</strong> Tarde</p>
+                      <small><strong>Horário:</strong> 13h às 17h</small>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- São Paulo -->
+              <div class="team-unit-group" data-unit-group="sao-paulo" hidden>
+                <div class="team-group-header">
+                  <h3>Unidade São Paulo</h3>
+                  <span class="team-badge">4 profissionais</span>
+                </div>
+
+                <div class="team-shift-subgroup" data-shift-group="manha">
+                  <h4 class="team-shift-title">Turno Manhã · 08h às 12h</h4>
+                  <article class="team-member-card" data-member-unit="sao-paulo" data-member-shift="manha">
+                    <span class="person-avatar purple">R</span>
+                    <div>
+                      <h3>Profissional E</h3>
+                      <p><strong>Unidade:</strong> São Paulo · <strong>Turno:</strong> Manhã</p>
+                      <small><strong>Horário:</strong> 08h às 12h</small>
+                    </div>
+                  </article>
+                  <article class="team-member-card" data-member-unit="sao-paulo" data-member-shift="manha">
+                    <span class="person-avatar orange">A</span>
+                    <div>
+                      <h3>Profissional F</h3>
+                      <p><strong>Unidade:</strong> São Paulo · <strong>Turno:</strong> Manhã</p>
+                      <small><strong>Horário:</strong> 08h às 12h</small>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="team-shift-subgroup" data-shift-group="tarde">
+                  <h4 class="team-shift-title">Turno Tarde · 13h às 17h</h4>
+                  <article class="team-member-card" data-member-unit="sao-paulo" data-member-shift="tarde">
+                    <span class="person-avatar pink">S</span>
+                    <div>
+                      <h3>Profissional G</h3>
+                      <p><strong>Unidade:</strong> São Paulo · <strong>Turno:</strong> Tarde</p>
+                      <small><strong>Horário:</strong> 13h às 17h</small>
+                    </div>
+                  </article>
+                  <article class="team-member-card" data-member-unit="sao-paulo" data-member-shift="tarde">
+                    <span class="person-avatar yellow">J</span>
+                    <div>
+                      <h3>Profissional H</h3>
+                      <p><strong>Unidade:</strong> São Paulo · <strong>Turno:</strong> Tarde</p>
+                      <small><strong>Horário:</strong> 13h às 17h</small>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-actions">
+              <button class="button button-accent" type="button" data-login-open>Entrar para agendar</button>
+              <button class="button button-outline" type="button" data-help-open>Preciso de orientação</button>
+            </div>
+          </aside>
+        </section>
+
+        <section class="massotherapy-flow" aria-labelledby="flow-title"><div><p class="section-kicker">Jornada integrada</p><h2 id="flow-title">Da escolha do horário até a chegada à sala.</h2></div><ol><li><span>1</span><strong>Entre</strong><p>Perfil reconhecido pela conta Google.</p></li><li><span>2</span><strong>Agende</strong><p>Escolha profissional, dia e horário.</p></li><li><span>3</span><strong>Receba lembretes</strong><p>Confirme, cancele ou entre na fila.</p></li><li><span>4</span><strong>Chegue com autonomia</strong><p>Orientação acessível e check-in.</p></li></ol></section>
+
+        <section class="journey-wayfinding-card"><div><p class="section-kicker">Planeje sua chegada</p><h2>Como chegar à sala?</h2><p>Mapa de referência de Londrina e orientações em texto ou áudio. Para São Paulo, a localização está em confirmação.</p></div><button type="button" class="button button-primary" data-open-wayfinding="londrina">Ver mapa e orientações</button></section>
+        <section class="selena-preview" aria-labelledby="selena-preview-title">
+          <div class="selena-mark moon-mark"><img src="assets/selena-mascote-atenta-com-pernas.png" alt="Mascote SELENA atenta, com uma das mãos próxima ao ouvido"></div>
+          <div><p class="section-kicker light">Acessibilidade profissional</p><h2 id="selena-preview-title"><span>A</span><img class="selena-preview-wordmark" src="assets/selena-logo-branca.png" alt="SELENA"><span>acompanha a rotina desses profissionais.</span></h2><p><strong>Solução de Escuta, Leitura e Navegação Acessível.</strong> Agenda e alterações podem ser consultadas por voz, texto ou comandos na tela.</p></div>
+          <button class="button button-accent" type="button" data-login-open>Acessar demonstração</button>
+        </section>
+      </div>
+    </section>
+
+    <section class="page private-page" id="page-colaborador" data-page="colaborador" hidden>
+      <header class="private-header">
+        <a class="private-brand" href="#/mural"><img src="assets/selena-logo-oficial.png" alt="organização parceira"><span>Massoterapia</span></a>
+        <div class="private-actions">
+          <button class="access-button" type="button" data-access="font" aria-pressed="false" title="Aumentar o texto">A+</button>
+          <button class="access-button" type="button" data-access="contrast" aria-pressed="false" title="Ativar alto contraste">◐</button>
+          <div class="signed-user"><span>AF</span><div><strong>Colaboradora Demo</strong><small>Colaboradora</small></div></div>
+          <a class="private-logout" href="#/mural">Sair</a>
+        </div>
+      </header>
+
+      <div class="private-main collaborator-main">
+        <section class="private-title-row">
+          <div><p class="section-kicker">Área da colaboradora</p><h1>Olá.</h1><p>Escolha um profissional para consultar os horários disponíveis.</p></div>
+          <aside class="appointment-chip"><span>Próximo atendimento</span><strong>Nenhuma reserva de teste</strong><small>A agenda corporativa não está conectada.</small></aside>
+        </section>
+        <aside class="eligibility-banner" id="eligibility-banner" role="status" aria-live="polite">
+          <strong>Cada colaborador pode realizar até duas massagens por semana.</strong>
+          <span id="eligibility-counter">Você utilizou 0 de 2 massagens nesta semana.</span>
+          <small>Controle demonstrativo neste navegador. A regra oficial precisa ser conectada à autenticação e à agenda corporativa.</small>
+        </aside>
+        <section class="attendance-policy" aria-labelledby="attendance-policy-title">
+          <div><p class="section-kicker">Proposta para validação do RH</p><h2 id="attendance-policy-title">Não poderá comparecer? Avise e libere a vaga.</h2>
+            <p>Cancele a reserva antes do atendimento. Cancelamentos comunicados não entram na contagem de faltas sem aviso. O objetivo é disponibilizar o horário para outra pessoa.</p>
+            <p><strong>Exemplo de prevenção:</strong> após a primeira falta sem aviso, enviar uma orientação; após a segunda, conversar com a pessoa; após três faltas confirmadas em 90 dias, encaminhar o caso ao RH para conferir os registros e ouvir o colaborador antes de avaliar qualquer medida. Nenhum bloqueio é automático.</p>
+            <small>Esta regra é apenas uma proposta. Prazos, exceções, canais acessíveis para aviso e eventual medida dependem de validação interna. Nesta demonstração, nenhum registro é enviado ao RH.</small></div>
+        </section>
+
+        <section aria-labelledby="choose-title">
+          <div class="section-heading-inline"><div><p class="section-kicker">Etapa 1 de 3</p><h2 id="choose-title">Escolha o massoterapeuta</h2></div><p>Horários ilustrativos gerados para os próximos dias úteis.</p></div>
+
+          <!-- Filtros de agendamento -->
+          <div class="booking-filters" role="region" aria-label="Filtros de massoterapeutas">
+            <div class="booking-filter-group" role="group" aria-label="Filtrar por unidade">
+              <span class="booking-filter-label">Unidade:</span>
+              <button type="button" class="filter-pill active" data-filter-unit="todas" aria-pressed="true">Todas as unidades</button>
+              <button type="button" class="filter-pill" data-filter-unit="londrina" aria-pressed="false">Londrina</button>
+              <button type="button" class="filter-pill" data-filter-unit="sao-paulo" aria-pressed="false">São Paulo</button>
+            </div>
+            <div class="booking-filter-group" role="group" aria-label="Filtrar por turno">
+              <span class="booking-filter-label">Turno:</span>
+              <button type="button" class="filter-pill active" data-filter-shift="todos" aria-pressed="true">Todos os turnos</button>
+              <button type="button" class="filter-pill" data-filter-shift="manha" aria-pressed="false">Manhã (08h às 12h)</button>
+              <button type="button" class="filter-pill" data-filter-shift="tarde" aria-pressed="false">Tarde (13h às 17h)</button>
+            </div>
+          </div>
+
+          <div class="filter-status-row" aria-live="polite">
+            <span id="booking-filter-count">Exibindo 8 de 8 massoterapeutas</span>
+          </div>
+
+          <div class="professional-grid" id="booking-professional-grid">
+            <!-- Londrina - Manhã -->
+            <button class="professional-card" type="button" data-professional="claudio" data-unit="londrina" data-shift="manha" aria-pressed="false">
+              <span class="person-avatar green">C</span>
+              <span>
+                <strong>Profissional A</strong>
+                <em>Londrina · Manhã · 08h às 12h</em>
+                <small>Próximo horário: segunda, 8h40</small>
+              </span>
+              <b>Ver agenda →</b>
+            </button>
+
+            <button class="professional-card" type="button" data-professional="andrey" data-unit="londrina" data-shift="manha" aria-pressed="false">
+              <span class="person-avatar blue">A</span>
+              <span>
+                <strong>Profissional B</strong>
+                <em>Londrina · Manhã · 08h às 12h</em>
+                <small>Próximo horário: terça, 8h20</small>
+              </span>
+              <b>Ver agenda →</b>
+            </button>
+
+            <!-- Londrina - Tarde -->
+            <button class="professional-card" type="button" data-professional="lindaura" data-unit="londrina" data-shift="tarde" aria-pressed="false">
+              <span class="person-avatar purple">L</span>
+              <span>
+                <strong>Profissional C</strong>
+                <em>Londrina · Tarde · 13h às 17h</em>
+                <small>Próximo horário: segunda, 13h20</small>
+              </span>
+              <b>Ver agenda →</b>
+            </button>
+
+            <button class="professional-card" type="button" data-professional="matheus" data-unit="londrina" data-shift="tarde" aria-pressed="false">
+              <span class="person-avatar teal">M</span>
+              <span>
+                <strong>Profissional D</strong>
+                <em>Londrina · Tarde · 13h às 17h</em>
+                <small>Próximo horário: terça, 13h40</small>
+              </span>
+              <b>Ver agenda →</b>
+            </button>
+
+            <!-- São Paulo - Manhã -->
+            <button class="professional-card" type="button" data-professional="regina" data-unit="sao-paulo" data-shift="manha" aria-pressed="false">
+              <span class="person-avatar purple">R</span>
+              <span>
+                <strong>Profissional E</strong>
+                <em>São Paulo · Manhã · 08h às 12h</em>
+                <small>Próximo horário: segunda, 8h30</small>
+              </span>
+              <b>Ver agenda →</b>
+            </button>
+
+            <button class="professional-card" type="button" data-professional="anapaula" data-unit="sao-paulo" data-shift="manha" aria-pressed="false">
+              <span class="person-avatar orange">A</span>
+              <span>
+                <strong>Profissional F</strong>
+                <em>São Paulo · Manhã · 08h às 12h</em>
+                <small>Próximo horário: terça, 8h40</small>
+              </span>
+              <b>Ver agenda →</b>
+            </button>
+
+            <!-- São Paulo - Tarde -->
+            <button class="professional-card" type="button" data-professional="silvania" data-unit="sao-paulo" data-shift="tarde" aria-pressed="false">
+              <span class="person-avatar pink">S</span>
+              <span>
+                <strong>Profissional G</strong>
+                <em>São Paulo · Tarde · 13h às 17h</em>
+                <small>Próximo horário: segunda, 13h30</small>
+              </span>
+              <b>Ver agenda →</b>
+            </button>
+
+            <button class="professional-card" type="button" data-professional="joao" data-unit="sao-paulo" data-shift="tarde" aria-pressed="false">
+              <span class="person-avatar yellow">J</span>
+              <span>
+                <strong>Profissional H</strong>
+                <em>São Paulo · Tarde · 13h às 17h</em>
+                <small>Próximo horário: quarta, 13h20</small>
+              </span>
+              <b>Ver agenda →</b>
+            </button>
+          </div>
+          <p id="no-professionals-message" class="no-results-message" hidden>Nenhum profissional encontrado com os filtros selecionados. Tente ajustar os filtros de unidade ou turno.</p>
+        </section>
+
+        <section class="calendar-section" id="calendar-section" hidden aria-labelledby="calendar-title">
+          <div class="selected-professional">
+            <div class="selected-professional-main"><span class="person-avatar green" id="selected-avatar">C</span><div><p class="section-kicker">Etapa 2 de 3</p><h2 id="calendar-title">Agenda de <span id="selected-name">Profissional A</span></h2><p id="selected-details">Londrina · manhã · sessões de 20 minutos</p></div></div>
+            <div class="selected-actions"><button class="button button-outline" id="read-calendar" type="button">🔊 Ouvir disponibilidade</button><button class="text-link button-reset" id="change-professional" type="button">Trocar profissional</button></div>
+          </div>
+          <div class="booking-calendar">
+            <div class="month-panel">
+              <div class="month-header"><button type="button" id="previous-month" aria-label="Mês anterior">‹</button><h3 id="month-title">Setembro de 2026</h3><button type="button" id="next-month" aria-label="Próximo mês">›</button></div>
+              <div class="weekdays" aria-hidden="true"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div>
+              <div class="month-grid" id="month-grid" role="grid" aria-label="Calendário de dias disponíveis"></div>
+              <div class="calendar-legend"><span><i class="available"></i>Disponível</span><span><i class="selected"></i>Selecionado</span><span><i></i>Indisponível</span></div>
+            </div>
+            <div class="times-panel">
+              <div class="times-header"><div><p class="section-kicker">Etapa 3 de 3</p><h3 id="selected-date-title">Selecione um dia</h3></div><small>Horário de Brasília</small></div>
+              <p id="times-instruction">Dias destacados possuem horários disponíveis.</p>
+              <div class="time-slots" id="time-slots" aria-live="polite"><div class="empty-times">◷<span>Escolha um dia disponível no calendário.</span></div></div>
+              <div class="booking-summary" id="booking-summary" hidden><div><span>Horário selecionado</span><strong id="selected-slot-summary">—</strong></div><button class="button button-primary" id="review-booking" type="button">Revisar e confirmar</button></div>
+            </div>
+          </div>
+        </section>
+        <section class="journey-waitlist" aria-labelledby="waitlist-title">
+          <p class="section-kicker">Interesse por disponibilidade</p><h2 id="waitlist-title">Avise-me se surgir uma vaga</h2>
+          <p>Escolha o profissional e o dia. O aviso aparece aqui no portal; não reserva automaticamente nem garante prioridade.</p>
+          <form id="waitlist-form"><label>Profissional<select id="waitlist-professional"><option value="claudio">Profissional A · Londrina · manhã</option><option value="andrey">Profissional B · Londrina · manhã</option><option value="lindaura">Profissional C · Londrina · tarde</option><option value="matheus">Profissional D · Londrina · tarde</option><option value="regina">Profissional E · São Paulo · manhã</option><option value="anapaula">Profissional F · São Paulo · manhã</option><option value="silvania">Profissional G · São Paulo · tarde</option><option value="joao">Profissional H · São Paulo · tarde</option></select></label><label>Dia<input type="date" id="waitlist-date" required></label><button id="waitlist-join" class="button button-primary" type="submit">Registrar interesse</button></form>
+          <p id="waitlist-feedback" role="status"></p><div id="waitlist-records"></div><p id="waitlist-storage-note" class="journey-map-note"></p>
+        </section>
+        <section class="collaborator-records" aria-labelledby="collaborator-records-title">
+          <div class="section-heading-inline"><div><p class="section-kicker">Meus atendimentos</p><h2 id="collaborator-records-title">Reservas e avaliações</h2></div><p>Dados demonstrativos salvos somente neste navegador.</p></div>
+          <div id="collaborator-records-list" aria-live="polite"><p>Nenhuma reserva feita nesta demonstração.</p></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="page private-page" id="page-massoterapeuta" data-page="massoterapeuta" hidden>
+      <header class="private-header professional-private-header">
+        <a class="private-brand" href="#/mural"><img src="assets/selena-logo-oficial.png" alt="organização parceira"><span>Agenda profissional</span></a>
+        <div class="private-actions">
+          <button class="access-button text-size-toggle" type="button" data-access="font" aria-pressed="false" title="Tamanho do texto: Normal (100%). Clique para alternar entre 125%, 150% e 200%"><span class="font-btn-label">A+</span> <small class="font-level-badge">100%</small></button>
+          <button class="access-button contrast-toggle-btn" type="button" data-access="contrast" aria-pressed="false" title="Ativar modo alto contraste preto e branco">◐</button>
+          <div class="signed-user"><span>CL</span><div><strong>Profissional A</strong><small>Massoterapeuta · Londrina</small></div></div>
+          <a class="private-logout" href="#/mural">Sair</a>
+        </div>
+      </header>
+
+      <div class="professional-app">
+        <div class="professional-workspace">
+          <div class="appointment-alert-banner" id="appointment-alert-banner" hidden role="alert" aria-live="assertive">
+            <div class="alert-icon" aria-hidden="true">🔔</div>
+            <div class="alert-body">
+              <div class="alert-meta">Lembrete de atendimento · Faltam 5 minutos</div>
+              <strong id="alert-banner-text">Profissional A, o próximo atendimento começa em 5 minutos.</strong>
+              <p id="alert-banner-sub">Massagem rápida de 20 minutos · Sala Bem-estar · Prepare a sala e os materiais para a sessão.</p>
+            </div>
+            <button type="button" class="alert-dismiss-btn" id="alert-dismiss-btn" aria-label="Dispensar aviso">Dispensar aviso ✕</button>
+          </div>
+
+          <section class="professional-welcome">
+            <div class="welcome-text-block">
+              <p class="section-kicker light">Rotina profissional</p>
+              <h1 id="professional-greeting">Bom dia, Profissional A.</h1>
+              <p id="agenda-top-summary">Carregando a agenda demonstrativa do Profissional A…</p>
+            </div>
+            <div class="professional-welcome-actions">
+              <div class="live-clock-card" id="live-clock-card" aria-label="Horário de Brasília">
+                <div class="clock-card-top"><span class="clock-live-dot" aria-hidden="true">●</span><small>Londrina · Horário de Brasília</small></div>
+                <strong class="clock-digits" id="sp-live-clock">--:--:--</strong>
+                <span class="clock-calendar" id="sp-live-date">Carregando horário…</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 1. Agenda e Próximo Atendimento Primeiro -->
+          <section class="professional-grid-layout">
+            <article class="next-client-card">
+              <div class="next-client-top">
+                <div>
+                  <p class="section-kicker">Próximo atendimento</p>
+                  <div class="large-time" id="next-client-time">--</div>
+                  <h2 id="next-client-name">Carregando agenda…</h2>
+                  <p id="next-client-desc">Sincronizando a agenda demonstrativa de Londrina…</p>
+                </div>
+                <div class="arrival-state" id="arrival-state"><span>Chegada</span><strong>Aguardando</strong></div>
+              </div>
+              <div class="client-actions">
+                <button class="button button-primary" id="confirm-arrival" type="button">Confirmar chegada</button>
+                <button class="button button-outline" id="start-session" type="button">Iniciar atendimento</button>
+                <button class="button button-outline" id="complete-session" type="button">Concluir atendimento</button>
+                <button class="button button-outline danger-action" id="register-no-show" type="button">Registrar não comparecimento</button>
+                <button class="button button-outline" id="read-client" type="button">🔊 Ouvir detalhes</button>
+              </div>
+              <p class="attendance-note">Registre “não comparecimento” só após o período de tolerância. Esta tela é demonstrativa; ocorrências recorrentes exigem conferência e análise do RH antes de qualquer medida.</p>
+              <div class="metrics-row"><div><strong id="metric-scheduled">7</strong><span>agendados</span></div><div><strong id="metric-free">1</strong><span>vaga livre</span></div><div><strong id="metric-remaining">4h</strong><span>restantes</span></div></div>
+            </article>
+
+            <aside class="today-schedule">
+              <div class="schedule-heading"><div><p class="section-kicker">Minha rotina</p><h2>Agenda demonstrativa</h2></div><button class="icon-action" id="read-day" type="button" title="Ouvir resumo">🔊</button></div>
+              <div class="schedule-date-controls"><label for="professional-agenda-date">Ver dia</label><input id="professional-agenda-date" type="date" min="2026-10-01" max="2026-11-30" aria-label="Escolher dia da agenda do Profissional A"><button id="professional-default-day" type="button">Próximo dia útil</button></div>
+              <ol class="schedule-list" id="schedule-list" aria-label="Selecione um atendimento para atualizar seu status"></ol>
+            </aside>
+          </section>
+
+          <!-- 2. Clima e Trânsito Abaixo da Agenda em Cartões Compactos -->
+          <section class="cenu-info-grid" aria-label="Informações sobre Londrina">
+            <article class="weather-expanded-card" id="weather-expanded-card" aria-labelledby="weather-card-title">
+              <div class="weather-card-header">
+                <div>
+                  <span class="badge live-badge">● Ao vivo</span>
+                  <h2 id="weather-card-title">Clima em Londrina</h2>
+                  <p class="weather-location-sub">Londrina · Paraná</p>
+                </div>
+                <button type="button" id="refresh-weather-btn" class="button button-outline button-xs" title="Atualizar dados meteorológicos">↻ Atualizar</button>
+              </div>
+
+              <div class="weather-card-body">
+                <div class="weather-main-stat">
+                  <span class="weather-big-icon" id="weather-icon" aria-hidden="true">⛅</span>
+                  <div class="weather-temp-wrap">
+                    <strong class="weather-huge-temp" id="weather-temp">-- °C</strong>
+                    <span class="weather-condition-text" id="weather-desc">Consultando fonte conectada…</span>
+                  </div>
+                </div>
+
+                <div class="weather-details-grid" aria-label="Métricas detalhadas do clima">
+                  <div class="weather-detail-item"><small>Sensação</small><strong id="weather-apparent">-- °C</strong></div>
+                  <div class="weather-detail-item"><small>Umidade</small><strong id="weather-humidity">-- %</strong></div>
+                  <div class="weather-detail-item"><small>Vento</small><strong id="weather-wind">-- km/h</strong></div>
+                  <div class="weather-detail-item"><small>Precipitação</small><strong id="weather-precip">0 mm</strong></div>
+                </div>
+              </div>
+              <footer class="weather-card-footer">
+                <small id="weather-footer-status">Dados reais conectados via Open-Meteo · Sem valores simulados</small>
+              </footer>
+            </article>
+
+            <article class="traffic-cenu-card" id="traffic-cenu-card" aria-labelledby="traffic-card-title">
+              <div class="traffic-card-header">
+                <div>
+                  <span class="badge traffic-badge">● Mobilidade</span>
+                  <h2 id="traffic-card-title">Rotas em Londrina</h2>
+                  <p class="traffic-location-sub">Unidade demonstrativa · Londrina, PR</p>
+                </div>
+                <span class="button button-outline button-xs" aria-label="Rota removida da versão pública">Rota demonstrativa</span>
+              </div>
+
+              <div class="traffic-map-wrapper">
+                <div class="traffic-map-frame" role="img" aria-label="Mapa ilustrativo removido da versão pública"></div>
+              </div>
+
+              <div class="traffic-card-info">
+                <div class="traffic-corridors-grid" aria-label="Orientação de rotas para Londrina">
+                  <div class="corridor-item"><span>Destino</span><strong>Unidade demonstrativa</strong></div>
+                  <div class="corridor-item"><span>Ponto de partida</span><strong>Escolha no Maps</strong></div>
+                  <div class="corridor-item"><span>Tempo de viagem</span><strong>Depende da origem</strong></div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <aside class="selena-panel" id="selena-panel" aria-labelledby="selena-title">
+          <div class="selena-panel-header">
+            <div class="selena-identity">
+              <span class="selena-avatar moon-avatar"><img src="assets/selena-mascote-joinha-sem-pernas.png" alt="Mascote SELENA fazendo sinal de positivo"></span>
+              <div>
+                <strong id="selena-title" class="selena-title-logo"><img src="assets/selena-logo-branca.png" alt="SELENA"></strong>
+                <small id="selena-subtitle">Solução de Escuta, Leitura e Navegação Acessível</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="voice-alerts-bar" aria-label="Avisos de agenda falados">
+            <label class="voice-alert-label" for="toggle-voice-alerts">
+              <input type="checkbox" id="toggle-voice-alerts" aria-describedby="voice-alert-desc">
+              <span class="voice-alert-text">
+                <strong>Avisos de agenda falados</strong>
+                <small id="voice-alert-desc">Selena avisa em voz alta 5 min antes de atendimentos confirmados.</small>
+              </span>
+            </label>
+            <button type="button" class="button button-outline button-xs" id="test-alert-btn" title="Simular aviso de 5 minutos">Testar aviso (5 min)</button>
+          </div>
+
+          <div class="selena-status" id="selena-status" aria-live="polite"><i></i><span>Pronta para ajudar · diga ‘Oi, Selena’</span></div>
+
+          <div class="selena-conversation" id="selena-conversation" aria-live="polite">
+            <div class="message selena-message"><span>SELENA</span><p id="selena-initial-greeting">Oi, Profissional A! Tudo bem?</p></div>
+          </div>
+
+          <div class="selena-suggestions" aria-label="Sugestões de perguntas">
+            <button type="button" data-selena-command="Como está minha agenda hoje?">Minha agenda de hoje</button>
+            <button type="button" data-selena-command="Quem é o próximo atendimento?">Próximo atendimento</button>
+            <button type="button" data-selena-command="Selena, Lucas Silva não compareceu às 9h40">Registrar falta</button>
+            <button type="button" data-selena-command="Como está o clima e as condições de trânsito?">Clima e trânsito</button>
+          </div>
+
+          <div class="wake-word-area">
+            <button class="wake-button" id="wake-button" type="button" aria-label="Falar com a SELENA">
+              <span aria-hidden="true">◉</span>
+              <strong>Falar com a SELENA</strong>
+              <small id="wake-button-desc">Atalho: Espaço · Microfone em espera por “Selena” ou “Oi, Selena”</small>
+            </button>
+          </div>
+
+          <form class="selena-input" id="selena-form">
+            <label class="sr-only" for="selena-text">Digite uma mensagem para a SELENA</label>
+            <input id="selena-text" type="text" autocomplete="off" placeholder="Digite uma dúvida ou diga “Selena”">
+            <button type="submit" aria-label="Enviar mensagem">➤</button>
+          </form>
+          <p class="selena-disclaimer">SELENA usa a agenda demonstrativa; respostas livres e voz natural dependem da configuração do Gemini. Diga “Selena” para iniciar.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="public-footer" id="public-footer">
+    <div class="footer-top"><div class="footer-brand"><img src="assets/selena-logo-oficial.png" alt="organização parceira"><span>Espaço Saúde</span></div>
+      <nav aria-label="Links do rodapé"><a href="#/mural">Mural</a><a href="#/atendimento">Atendimento</a><a href="#/campanhas">Campanhas</a><a href="#/massoterapia">Massoterapia</a><a href="#/sobre">Sobre</a></nav></div>
+    <div class="footer-bottom"><div class="footer-certifications" aria-label="Segurança da informação e privacidade"><strong>Segurança da informação e privacidade</strong><span class="footer-iso"><img src="assets/iso-27001.png" alt=""><span>ISO 27001</span></span><span class="footer-iso"><img src="assets/iso-27701.png" alt=""><span>ISO 27701</span></span></div>
+      <p>Evolução conceitual do canal existente · Protótipo do Grupo 3 · Desafio de Inovação 2026</p></div>
+  </footer>
+
+  <div class="site-help-widget" id="site-help-widget">
+    <section class="site-help-panel" id="site-help-panel" role="dialog" aria-modal="false" aria-labelledby="site-help-title" hidden>
+      <header class="site-help-header"><span class="site-help-avatar"><img src="assets/selena-ajuda-eureka.png" alt="Mascote Selena com uma ideia"></span><div><strong id="site-help-title">Ajuda da Selena</strong><small>Escolha uma pergunta para ver a resposta</small></div><button class="site-help-close" type="button" data-site-help-close aria-label="Fechar ajuda">×</button></header>
+      <div class="site-help-body">
+        <div id="site-help-questions"><p class="site-help-greeting">Oi! Em que posso ajudar?</p><p class="site-help-caption">Respostas rápidas sobre o portal</p>
+          <div class="site-help-questions">
+            <button type="button" data-site-help-question="booking">Como agendo uma massagem?<span aria-hidden="true">→</span></button>
+            <button type="button" data-site-help-question="cancel">Como cancelo uma reserva?<span aria-hidden="true">→</span></button>
+            <button type="button" data-site-help-question="limit">Quantas massagens posso fazer?<span aria-hidden="true">→</span></button>
+            <button type="button" data-site-help-question="health">Onde vejo os serviços de saúde?<span aria-hidden="true">→</span></button>
+            <button type="button" data-site-help-question="campaigns">Onde encontro as campanhas?<span aria-hidden="true">→</span></button>
+            <button type="button" data-site-help-question="access">Como aumento as letras ou o contraste?<span aria-hidden="true">→</span></button>
+            <button type="button" data-site-help-question="demo">Minha reserva é enviada para a empresa?<span aria-hidden="true">→</span></button>
+          </div>
+          <button class="site-help-other" type="button" data-site-help-other>Preciso de outro tipo de orientação <span aria-hidden="true">↗</span></button>
+        </div>
+        <div id="site-help-answer-view" hidden><button class="site-help-back" type="button" data-site-help-back>← Todas as perguntas</button>
+          <div class="site-help-answer" data-site-help-answer="booking" hidden><h3>Como agendo uma massagem?</h3><p>Abra Massoterapia, escolha o perfil de colaboradora de demonstração, selecione a unidade, o profissional, um dia disponível e o horário. Depois, confirme a reserva.</p><a href="#/massoterapia">Ir para Massoterapia →</a></div>
+          <div class="site-help-answer" data-site-help-answer="cancel" hidden><h3>Como cancelo uma reserva?</h3><p>Entre com o mesmo perfil usado no agendamento. Na área <strong>Meus atendimentos</strong>, encontre sua reserva e use a opção de cancelar antes do horário marcado. A vaga volta a aparecer como disponível.</p><a href="#/massoterapia">Ver meus atendimentos →</a></div>
+          <div class="site-help-answer" data-site-help-answer="limit" hidden><h3>Quantas massagens posso fazer?</h3><p>O limite da proposta é de até <strong>duas massagens por semana</strong> por colaborador. O terceiro agendamento na mesma semana é impedido na demonstração.</p><a href="#/massoterapia">Conhecer o benefício →</a></div>
+          <div class="site-help-answer" data-site-help-answer="health" hidden><h3>Onde vejo os serviços de saúde?</h3><p>Na página Atendimento você encontra o Espaço Saúde, telemedicina, serviços presenciais, planos e canais de orientação. Os horários publicados vieram de um comunicado anterior e precisam de confirmação com a equipe.</p><a href="#/atendimento">Abrir Atendimento →</a></div>
+          <div class="site-help-answer" data-site-help-answer="campaigns" hidden><h3>Onde encontro as campanhas?</h3><p>Abra Campanhas para consultar as ações atuais e anteriores. Cada página reúne os detalhes, o calendário, os materiais disponíveis e as participações documentadas.</p><a href="#/campanhas">Abrir Campanhas →</a></div>
+          <div class="site-help-answer" data-site-help-answer="access" hidden><h3>Como aumento as letras ou o contraste?</h3><p>Use <strong>A+</strong> no topo da página para alternar os tamanhos de texto e <strong>◐</strong> para ligar ou desligar o alto contraste. No celular, esses controles ficam no menu.</p><a href="#/acessibilidade">Ver acessibilidade →</a></div>
+          <div class="site-help-answer" data-site-help-answer="demo" hidden><h3>Minha reserva é enviada para a empresa?</h3><p>Ainda não. Esta versão é um protótipo: reservas, cancelamentos e avaliações ficam salvos apenas neste navegador. A sincronização real dependerá de autenticação e de uma base compartilhada.</p><a href="#/massoterapia">Entender a demonstração →</a></div>
+        </div>
+      </div>
+      <div class="site-help-footnote">Ajuda rápida com respostas prontas</div>
+    </section>
+    <button class="site-help-launcher" id="site-help-launcher" type="button" aria-label="Abrir ajuda da Selena" aria-controls="site-help-panel" aria-expanded="false" title="Ajuda da Selena"><img src="assets/selena-mascote-joinha-sem-pernas.png" alt=""><span class="sr-only">Ajuda da Selena</span></button>
+  </div>
+
+  <div class="modal-backdrop" id="confirmation-modal" hidden>
+    <section class="confirmation-modal" role="dialog" aria-modal="true" aria-labelledby="confirmation-title">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Fechar">×</button>
+      <div id="review-state">
+        <span class="confirmation-icon" aria-hidden="true">✓</span><p class="section-kicker">Revisão do agendamento</p><h2 id="confirmation-title">Confirme os dados</h2>
+        <dl><div><dt>Profissional</dt><dd id="modal-professional">—</dd></div><div><dt>Unidade</dt><dd id="modal-location">—</dd></div><div><dt>Data e horário</dt><dd id="modal-date-time">—</dd></div><div><dt>Duração</dt><dd>20 minutos</dd></div></dl>
+        <p class="confirmation-note">Cada colaborador pode realizar até duas massagens por semana. Se não puder vir, cancele a reserva antes do horário: o cancelamento não é falta sem aviso. Reserva demonstrativa: não é enviada à agenda da empresa.</p>
+        <p class="booking-error" id="booking-error" role="alert" hidden></p>
+        <div class="modal-actions"><button class="button button-outline" id="modal-back" type="button">Voltar</button><button class="button button-primary" id="confirm-booking" type="button">Confirmar agendamento</button></div>
+      </div>
+      <div class="success-state" id="success-state" hidden><span>✓</span><h2>Reserva demonstrativa registrada</h2><p id="success-message">O horário foi salvo neste navegador.</p><p class="confirmation-note">Este protótipo ainda não envia reservas nem lembretes para a agenda da empresa.</p><button class="button button-primary" id="finish-booking" type="button">Concluir</button></div>
+    </section>
+  </div>
+
+  <div class="info-backdrop" id="login-modal" hidden>
+    <section class="info-modal login-modal" role="dialog" aria-modal="true" aria-labelledby="login-title">
+      <button class="modal-close" type="button" data-login-close aria-label="Fechar login">×</button>
+      <div class="login-modal-brand"><img src="assets/selena-logo-oficial.png" alt="organização parceira"><span>Massoterapia</span></div>
+      <p class="section-kicker">Acesso ao serviço</p>
+      <h2 id="login-title">Entre para continuar</h2>
+      <p>Acesse com sua conta Google ou use os perfis de demonstração para testar.</p>
+
+      <div class="modal-google-auth-wrap">
+        <button type="button" class="gsi-material-button" id="login-gsi-button">
+          <div class="gsi-material-button-state"></div>
+          <div class="gsi-material-button-content-wrapper">
+            <div class="gsi-material-button-icon">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" style="display: block;">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                <path fill="none" d="M0 0h48v48H0z"></path>
+              </svg>
+            </div>
+            <span class="gsi-material-button-contents">Sign in with Google</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="login-divider"><span>ou perfis demonstrativos</span></div>
+
+      <button class="google-button" id="google-button" type="button">Escolher perfil de demonstração</button>
+      <div class="demo-account-picker" id="demo-account-picker" hidden>
+        <div class="picker-heading"><strong>Escolha uma conta demonstrativa</strong><span>Protótipo</span></div>
+        <p>Esta escolha simula o acesso e mantém as reservas de teste neste navegador.</p>
+        <button type="button" data-demo-account="colaborador"><span class="account-avatar">AF</span><span><strong>Colaboradora Demo</strong><small>colaboradora@demo.local</small></span><b>Colaboradora</b></button>
+        <button type="button" data-demo-account="massoterapeuta"><span class="account-avatar pro">CL</span><span><strong>Profissional A</strong><small>massoterapeuta@demo.local</small></span><b>Massoterapeuta</b></button>
+      </div>
+      <p class="prototype-login-note">Protótipo: as reservas de teste ficam salvas neste navegador.</p>
+    </section>
+  </div>
+
+  <div class="info-backdrop" id="help-modal" hidden>
+    <section class="info-modal help-directory-modal" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <button class="modal-close" type="button" data-help-close aria-label="Fechar ajuda">×</button>
+      <p class="section-kicker">Ajuda</p><h2 id="help-title">Como podemos orientar?</h2>
+      <p>Escolha o que você precisa. Cada opção direciona para o canal responsável, com privacidade e sem misturar informações clínicas com relatos de ética.</p>
+      <div class="help-options">
+        <button type="button" data-help-panel="health"><span><img src="assets/icon-espaco-saude.svg" alt=""></span><span><strong>Conversar com o Espaço Saúde</strong><small>Atendimento médico, orientação e saúde ocupacional.</small></span></button>
+        <button type="button" data-help-panel="mental"><span><img src="assets/icon-mental.svg" alt=""></span><span><strong>Buscar apoio psicológico</strong><small>Acolhimento, benefícios, NR‑1 e saúde mental.</small></span></button>
+        <button type="button" data-help-panel="women"><span><img src="assets/icon-mulheres.svg" alt=""></span><span><strong>Saúde e proteção das mulheres</strong><small>Saúde da mulher, equidade e enfrentamento à violência.</small></span></button>
+        <button type="button" data-help-panel="inclusion"><span><img src="assets/icon-inclusao.svg" alt=""></span><span><strong>Respeito, diversidade e inclusão</strong><small>Racismo, capacitismo, LGBTfobia e acessibilidade.</small></span></button>
+        <button type="button" data-help-panel="ethics"><span><img src="assets/icon-etica.svg" alt=""></span><span><strong>Relatar assédio ou discriminação</strong><small>Canal de ética ou denúncia, com orientação sobre sigilo.</small></span></button>
+        <button type="button" data-help-panel="work"><span><img src="assets/icon-sst.svg" alt=""></span><span><strong>Falar com RH, SST ou CIPA</strong><small>Trabalho, prevenção, acessibilidade e segurança.</small></span></button>
+        <button type="button" data-help-route="massoterapia"><span><img src="assets/icon-massoterapia.svg" alt=""></span><span><strong>Massoterapia</strong><small>Agendamento, cancelamento, acesso ou orientação.</small></span></button>
+        <button class="urgent-help-option" type="button" data-help-panel="urgent"><span aria-hidden="true">!</span><span><strong>Encontrar ajuda urgente</strong><small>Risco à vida, crise emocional ou violência.</small></span></button>
+      </div>
+      <div class="help-detail" id="help-detail" hidden aria-live="polite"></div>
+      <p class="help-validation">Contatos corporativos exibidos abaixo foram recuperados do histórico e precisam de confirmação antes da implantação oficial.</p>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "Espaço Saúde",
+  "description": "Protótipo da evolução do Espaço Saúde, com teleatendimento, conteúdos, campanhas e massoterapia acessível.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

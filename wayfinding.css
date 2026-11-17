@@ -1,0 +1,90 @@
+/* Estilos isolados do mapa; dimensões das logos existentes preservadas. */
+.wayfinding-dialog{width:min(1280px,96vw);max-height:95dvh;padding:24px;border:1px solid #ddcde8;border-radius:24px;background:#fff;color:#2b123d;overflow:auto;box-shadow:0 25px 90px #17042c55}
+.wayfinding-dialog::backdrop{background:#1c0b30ae;backdrop-filter:blur(4px)}
+.wayfinding-header{display:flex;gap:16px;justify-content:space-between;align-items:flex-start}
+.wayfinding-header h2{font-size:clamp(1.5rem,3vw,2.2rem);margin:.25rem 0}
+.wayfinding-address{color:#675672;font-size:.9rem;margin:.3rem 0 1rem}
+.wayfinding-selectors{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 16px}
+.wayfinding-selectors>div{display:flex;padding:4px;border-radius:12px;background:#f2edf7;gap:3px}
+.wayfinding-selectors button{padding:9px 14px;border:0;border-radius:9px;background:transparent;color:#59376d;font:inherit;font-weight:700;cursor:pointer}
+.wayfinding-selectors button[aria-pressed=true]{background:#5c1896;color:#fff;box-shadow:0 3px 9px #54118c24}
+.wayfinding-content{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(275px,1fr);gap:22px;align-items:start}
+.wayfinding-content[hidden],.wayfinding-pending[hidden],.wayfinding-progress[hidden],.wf-sim-key[hidden]{display:none}
+.wayfinding-map-column{min-width:0}
+.wayfinding-mode{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 14px;background:#f4eef9;border:1px solid #e0d2ed;border-radius:14px 14px 0 0;font-size:.78rem}
+.wf-mode-label{font-weight:800;color:#66259b}
+.wf-simulation .wayfinding-mode{background:#fff2d5;border-color:#efca7b}
+.wf-simulation .wf-mode-label{color:#71430c}
+.wayfinding-canvas{position:relative;height:clamp(360px,57vh,600px);border:1px solid #ddd2e6;border-top:0;background:#f9f8fb;border-radius:0 0 16px 16px;overflow:hidden}
+.wayfinding-canvas svg{display:block;width:100%;height:100%;cursor:grab;touch-action:none;outline-offset:-4px}
+.wayfinding-canvas svg.dragging{cursor:grabbing}
+.wf-plan-image{filter:grayscale(1);opacity:.66}
+.wf-zones rect{opacity:.48;stroke:#fff;stroke-width:1}
+.wf-route-base{stroke:#8757a6;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 1px 2px #fff)}
+.wf-route-done{stroke:#4d1182;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.wf-start circle{fill:#fff;stroke:#752ba3;stroke-width:2;vector-effect:non-scaling-stroke}
+.wf-start text,.wf-place-label,.wf-you-marker text{font-family:Arial,sans-serif;font-size:8px;font-weight:700;fill:#311242;paint-order:stroke;stroke:#fff;stroke-width:2.5px;stroke-linejoin:round}
+.wf-dest-marker>circle:first-child{fill:#6a229e;stroke:#fff;stroke-width:1.8}
+.wf-you-dot{fill:#1b6ed0;stroke:#fff;stroke-width:1.8}
+.wf-you-halo{fill:#2e87ec33;stroke:#2e87ec88;stroke-width:.6}
+.wf-you-marker text{fill:#164e89;font-size:7px}
+.wayfinding-map-tools{position:absolute;top:14px;right:14px;display:flex;flex-wrap:wrap;gap:5px;max-width:calc(100% - 28px)}
+.wayfinding-map-tools button{padding:9px 11px;min-height:40px;border:1px solid #d5c3e3;border-radius:10px;font:inherit;font-size:.8rem;font-weight:700;color:#552078;background:#fffffff2;box-shadow:0 2px 8px #30104716;cursor:pointer}
+.wayfinding-legend{position:absolute;bottom:12px;left:12px;display:flex;gap:12px;flex-wrap:wrap;max-width:calc(100% - 24px);padding:8px 12px;border-radius:10px;background:#fffffff0;font-size:.72rem;box-shadow:0 2px 8px #30104716;pointer-events:none}
+.wayfinding-legend span{display:flex;align-items:center;gap:5px}
+.wayfinding-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;background:#2878cd}
+.wayfinding-legend i.wf-route-key{height:3px;width:17px;border-radius:3px;background:#8757a6}
+.wayfinding-legend i.wf-destination-key{background:#6a229e}
+.wayfinding-map-help,.wayfinding-validation{font-size:.76rem;color:#715e7c;line-height:1.5;margin:.65rem 0}
+.wayfinding-guide{background:#fbf8fe;padding:18px;border:1px solid #e5daed;border-radius:18px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.wayfinding-selena{display:flex;gap:12px;align-items:center}
+.wayfinding-selena img{width:65px;height:70px;object-fit:contain}
+.wayfinding-selena span,.wayfinding-selena strong{display:block}
+.wayfinding-selena span{font-size:.75rem;color:#805b92}
+.wayfinding-selena strong{font-size:1.1rem}
+.wayfinding-demo-disclaimer{font-size:.8rem;line-height:1.55;background:#fff2d5;border:1px solid #f0d297;padding:10px 12px;border-radius:10px;color:#704b12;margin:0}
+.wayfinding-voice{display:flex;align-items:center;gap:9px;cursor:pointer;font-weight:700}
+.wayfinding-voice input{width:20px;height:20px;accent-color:#6a229e}
+.wayfinding-live-instruction{min-height:65px;padding:13px;border-left:3px solid #9e65c3;background:#fff;border-radius:0 10px 10px 0;font-size:.92rem;line-height:1.65;margin:0}
+.wf-progress-track{height:6px;border-radius:8px;background:#e8def1;overflow:hidden}
+.wf-progress-track span{display:block;background:#6a229e;width:0;height:100%}
+.wf-progress-label{font-size:.75rem;margin:6px 0 9px;color:#6b527a}
+.wayfinding-play-controls{display:flex;flex-wrap:wrap;gap:5px}
+.wayfinding-play-controls .button{font-size:.72rem;padding:8px 10px;min-height:38px}
+.wayfinding-directions{font-size:.85rem;line-height:1.6}
+.wayfinding-directions summary{cursor:pointer;font-weight:700}
+.wayfinding-directions ol{padding-left:21px}
+.wayfinding-directions li{padding-bottom:8px}
+.health-wayfinding-entry{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:22px;padding:18px;border:1px solid #ffffff35;border-radius:14px;background:#ffffff0d}
+.health-wayfinding-entry h3{margin:0 0 5px;color:#ffce70;font-size:1rem}
+.health-wayfinding-entry p{margin:0}
+.mural-update-lead{font-size:.83rem;line-height:1.5;color:#4e3b59;margin:8px 0}
+.privacy-community-post{border-color:#cfb7e1!important;background:#faf6fe!important}
+@media(max-width:800px){
+ .wayfinding-dialog{padding:16px;width:96vw;border-radius:17px;max-height:96dvh}
+ .wayfinding-content{grid-template-columns:1fr;gap:14px}
+ .wayfinding-canvas{height:420px;height:min(58dvh,460px);min-height:300px}
+ .wayfinding-header{flex-wrap:wrap}.wayfinding-header>div{flex:1;min-width:190px}
+ .wayfinding-header .button{min-height:42px;padding:9px 12px}
+ .wayfinding-selectors button{padding:10px;font-size:.84rem}
+ .health-wayfinding-entry{flex-direction:column;align-items:flex-start}
+ .wayfinding-map-tools{top:10px;right:10px}.wayfinding-guide{padding:15px}
+}
+body.high-contrast .wayfinding-dialog,body.high-contrast .wayfinding-guide{background:#000;color:#fff;border:2px solid #fff}
+body.high-contrast .wayfinding-dialog :is(p,strong,span,label,summary,li){color:#fff}
+body.high-contrast .wayfinding-demo-disclaimer{background:#201700;border-color:#ffdf77}
+body.high-contrast .wayfinding-live-instruction{background:#18121d}
+body.high-contrast .wayfinding-mode{background:#1e1028}
+body.high-contrast .wayfinding-canvas{border-color:#fff}
+body.high-contrast .mural-update-lead{color:#fff}
+@media(prefers-reduced-motion:reduce){.wayfinding-dialog *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Realce nos cards e controles do portal, exceto no painel profissional. */
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .page:not(#page-massoterapeuta) :is(article,.daily-quote,.benefit-links a,.quick-card,.inclusive-grid>div,.guidelines-grid>div,.service-info-grid>div,.professional-card){transition:translate .22s ease,box-shadow .22s ease,border-color .22s ease}
+ .page:not(#page-massoterapeuta) :is(article,.daily-quote,.benefit-links a,.quick-card,.inclusive-grid>div,.guidelines-grid>div,.service-info-grid>div,.professional-card):hover{translate:0 -3px;box-shadow:0 10px 28px #4c176c1c}
+ .page:not(#page-massoterapeuta) :is(button,.button,a){transition:background-color .18s ease,box-shadow .18s ease,color .18s ease}
+ .page:not(#page-massoterapeuta) :is(button,.button):not(:disabled):hover{box-shadow:0 5px 15px #4c176c24}
+ .page:not(#page-massoterapeuta) a:not(.button):hover{text-decoration:underline;text-underline-offset:4px}
+ .public-navigation a:hover,.header-actions button:hover{background:#f2eafa;border-radius:9px}
+ .wayfinding-dialog button:not(:disabled):hover{box-shadow:0 5px 15px #4c176c24}
+}

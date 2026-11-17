@@ -1,0 +1,33 @@
+{
+  "indicador": "Agendamentos de massoterapia",
+  "ano": 2026,
+  "atualizadoEm": "2026-11-03",
+  "periodos": [
+    {
+      "inicio": "2026-01",
+      "fim": "2026-09",
+      "agendamentos": 3076,
+      "status": "historico_confirmado",
+      "observacao": "Total consolidado da base histórica anteriormente fornecida."
+    },
+    {
+      "inicio": "2026-10",
+      "fim": "2026-10",
+      "agendamentos": 385,
+      "status": "confirmado",
+      "fonte": "Dado agregado fornecido para a demonstração"
+    },
+    {
+      "inicio": "2026-01",
+      "fim": "2026-10",
+      "agendamentos": 3000,
+      "status": "calculado",
+      "calculo": "dado demonstrativo"
+    }
+  ],
+  "pendencias": [
+    "Distribuição de outubro entre Londrina e São Paulo",
+    "Quantidade de faltas e cancelamentos tardios em outubro",
+    "Dados de novembro, ainda em andamento"
+  ]
+}

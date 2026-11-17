@@ -1,0 +1,4 @@
+indicador,periodo_inicio,periodo_fim,agendamentos,status,fonte
+Agendamentos de massoterapia,2026-01,2026-09,3076,historico_confirmado,Base histórica anteriormente fornecida
+Agendamentos de massoterapia,2026-10,2026-10,385,confirmado,"Dado agregado fornecido para a demonstração"
+Agendamentos de massoterapia,2026-01,2026-10,3000,calculado,dado demonstrativo
