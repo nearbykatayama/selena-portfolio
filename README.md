@@ -133,6 +133,13 @@ O objetivo não é substituir o atendimento humano. É retirar o atrito operacio
 7. confirma a chegada;
 8. avalia o atendimento concluído.
 
+<img width="1919" height="826" alt="image" src="https://github.com/user-attachments/assets/43ad53c0-99a7-44e3-a0a6-58fe1f1e003d" />
+
+<img width="1271" height="382" alt="image" src="https://github.com/user-attachments/assets/332cbad1-5eb5-41d7-9bad-9bd9d1219745" />
+
+<img width="1290" height="601" alt="image" src="https://github.com/user-attachments/assets/9d7a845b-beb3-4fbe-bcd1-c5e5f6225e85" />
+
+
 ### Jornada do massoterapeuta
 
 1. acessa o painel profissional;
@@ -140,6 +147,8 @@ O objetivo não é substituir o atendimento humano. É retirar o atrito operacio
 3. identifica o próximo atendimento e alterações;
 4. acompanha chegada, início, conclusão ou falta;
 5. utiliza a Selena para navegar e obter respostas operacionais.
+
+<img width="1919" height="827" alt="image" src="https://github.com/user-attachments/assets/de3901c5-28f7-4c01-8759-8681b657675b" />
 
 ### Jornada do RH
 
