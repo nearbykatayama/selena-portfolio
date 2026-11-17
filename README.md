@@ -158,6 +158,11 @@ O objetivo não é substituir o atendimento humano. É retirar o atrito operacio
 4. avalia satisfação e necessidade de comunicação;
 5. toma decisões de melhoria e expansão com base em evidências.
 
+<img width="1167" height="621" alt="image" src="https://github.com/user-attachments/assets/6f333522-1897-46dd-9e46-9190fa9f8dd6" />
+
+<img width="1191" height="614" alt="image" src="https://github.com/user-attachments/assets/23093407-3469-4da5-830c-48175b0d2fe9" />
+
+
 ## O que funciona hoje
 
 | Entrega | Status | Funcionamento atual |
